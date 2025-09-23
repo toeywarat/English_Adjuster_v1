@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | English Adjuster</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-blue-900 text-white py-6 shadow">
+    <div class="container mx-auto flex justify-between items-center px-6">
+      <h1 class="text-2xl font-bold">English Adjuster</h1>
+      <nav>
+        <a href="index.html" class="mr-4 hover:text-yellow-300">Home</a>
+        <a href="lessons/lessons.html" class="mr-4 hover:text-yellow-300">Lessons</a>
+        <a href="quizzes/quiz.html" class="mr-4 hover:text-yellow-300">Quizzes</a>
+        <a href="history.html" class="hover:text-yellow-300">History</a>
+        <a href="profile.html" class="text-3xl text-yellow-300">👤</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-6 py-12 flex-grow">
+    <section class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow">
+  <h2 class="text-3xl font-bold text-blue-900 mb-6">My Dashboard</h2>
+  
+  <p class="mb-2"><strong>Email:</strong> <span id="email" class="text-blue-700">Loading...</span></p>
+  <p class="mb-6"><strong>User ID:</strong> <span id="userId" class="text-gray-700">Loading...</span></p>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    
+    <!-- Pretest Score Summary -->
+    <div class="bg-gray-50 p-4 rounded shadow">
+      <h3 class="text-lg font-semibold text-blue-800 mb-2">📊 Pretest Summary</h3>
+      <ul class="list-disc ml-6 space-y-1 text-gray-700" id="score-summary">
+        <!-- JS will inject scores here -->
+      </ul>
+    </div>
+
+    <!-- Recommended Lessons -->
+    <div class="bg-yellow-50 p-4 rounded shadow">
+      <h3 class="text-lg font-semibold text-yellow-800 mb-2">🧠 Recommended Lessons</h3>
+      <ul class="list-disc ml-6 space-y-1 text-gray-700" id="recommend-list">
+        <!-- JS will inject lessons here -->
+      </ul>
+    </div>
+  </div>
+
+  <!-- Logout Button -->
+  <div class="mt-8">
+    <button onclick="logout()" class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded shadow">
+      Log Out
+    </button>
+  </div>
+</section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white text-center py-4">
+    <p>&copy; 2025 Smart Learning System. All rights reserved.</p>
+  </footer>
+
+    <!-- Script -->
+    <script>
+    const token = localStorage.getItem("token");
+
+    const emailEl = document.getElementById("email");
+    const userIdEl = document.getElementById("userId");
+    const scoreList = document.getElementById("score-summary");
+    const recommendList = document.getElementById("recommend-list");
+
+    if (!token) {
+      // ไม่ sign in: เปลี่ยนเนื้อหา dashboard ทั้งหมด
+      document.querySelector("main").innerHTML = `
+        <section class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow text-center">
+          <h2 class="text-2xl font-bold text-red-600 mb-4">You are not signed in</h2>
+          <a href="signup.html" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 mr-2">Sign Up</a>
+          <a href="signin.html" class="text-blue-700 underline hover:text-blue-900">Already have an account? Sign In</a>
+        </section>
+      `;
+    } else {
+      // ถ้ามี token: ลองดึงข้อมูลผู้ใช้
+      fetch("http://localhost:5500/api/profile", {
+        method: "GET",
+        headers: {
+          Authorization: "Bearer " + token
+        }
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.message === "Unauthorized") {
+          showGuestView(); // ไม่ redirect แค่เปลี่ยน UI
+        } else {
+          emailEl.textContent = data.email;
+          userIdEl.textContent = data._id;
+
+          if (data.pretestScores) {
+            const s = data.pretestScores;
+            scoreList.innerHTML = `
+              <li>Grammar: ${s.grammar} / 18</li>
+              <li>Vocabulary: ${s.vocab} / 15</li>
+              <li>Reading: ${s.reading} / 15</li>
+              <li>Writing: ${s.writing} / 12</li>
+              <li><strong>Total: ${s.total} / 60</strong></li>
+            `;
+          }
+
+          // ดึงจุดอ่อนเพิ่มเติม
+          fetch("http://localhost:5500/api/analyze-pretest", {
+            headers: {
+              Authorization: "Bearer " + token
+            }
+          })
+          .then(res => res.json())
+          .then(data => {
+            if (data.weaknesses?.length > 0) {
+              const list = data.weaknesses.map(
+                w => `<li>${w.topic} - <a href="${w.link}" class="text-blue-700 underline" target="_blank">Go to Lesson</a></li>`
+              ).join("");
+              recommendList.innerHTML = list;
+            }
+          });
+        }
+      })
+      .catch(err => {
+        console.error("Profile error:", err);
+        showGuestView();
+      });
+    }
+
+    function logout() {
+      localStorage.removeItem("token");
+      location.reload();
+    }
+
+    function showGuestView() {
+      document.querySelector("main").innerHTML = `
+        <section class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow text-center">
+          <h2 class="text-2xl font-bold text-red-600 mb-4">You are not signed in</h2>
+          <a href="signup.html" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 mr-2">Sign Up</a>
+          <a href="signin.html" class="text-blue-700 underline hover:text-blue-900">Already have an account? Sign In</a>
+        </section>
+      `;
+    }
+  </script>
+
+<button onclick="window.history.back()"class="fixed top-4 left-4 text-white text-2xl hover:text-yellow-300 font-bold py-2 px-4 z-50 ">
+    ⇦
+  </button>
+</body>
+</html>

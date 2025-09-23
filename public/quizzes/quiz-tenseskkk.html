@@ -1,0 +1,1187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tenses Quiz</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/attempts-client.js"></script>
+  <script>const QUIZ_STARTED_AT = Date.now();</script>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+  <header class="bg-blue-900 text-white py-6 shadow">
+    <div class="container mx-auto flex justify-between items-center px-6">
+      <h1 class="text-2xl font-bold">English Adjuster</h1>
+      <nav>
+        <a href="../index.html" class="mr-4 hover:text-yellow-300">Home</a>
+        <a href="../lessons/lessons.html" class="mr-4 hover:text-yellow-300">Lessons</a>
+        <a href="quiz.html" class="hover:text-yellow-300">Quizzes</a>
+        <a href="../profile.html" class="text-3xl text-yellow-300">👤</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-6 py-12 flex-grow">
+    <section class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-blue-900 mb-4">Tenses Quiz</h2>
+      <p class="text-lg">แบบทดสอบไวยากรณ์เรื่อง Tenses ทั้งหมด 35 ข้อ</p>
+    </section>
+
+    <form id="quizForm" class="space-y-8">
+
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 1: She ______ the piano since morning.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q0" value="plays" class="form-radio text-blue-600">
+          <span class="ml-2">A) plays</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q0" value="has been playing" class="form-radio text-blue-600">
+          <span class="ml-2">B) has been playing</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q0" value="played" class="form-radio text-blue-600">
+          <span class="ml-2">C) played</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q0" value="had played" class="form-radio text-blue-600">
+          <span class="ml-2">D) had played</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 2: He ______ hard all day.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q1" value="worked" class="form-radio text-blue-600">
+          <span class="ml-2">A) worked</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q1" value="was working" class="form-radio text-blue-600">
+          <span class="ml-2">B) was working</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q1" value="has been working" class="form-radio text-blue-600">
+          <span class="ml-2">C) has been working</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q1" value="works" class="form-radio text-blue-600">
+          <span class="ml-2">D) works</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 3: The train ______ at 6 p.m.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q2" value="leaves" class="form-radio text-blue-600">
+          <span class="ml-2">A) leaves</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q2" value="left" class="form-radio text-blue-600">
+          <span class="ml-2">B) left</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q2" value="leave" class="form-radio text-blue-600">
+          <span class="ml-2">C) leave</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q2" value="has left" class="form-radio text-blue-600">
+          <span class="ml-2">D) has left</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 4: He ______ breakfast before leaving.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q3" value="has" class="form-radio text-blue-600">
+          <span class="ml-2">A) has</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q3" value="has had" class="form-radio text-blue-600">
+          <span class="ml-2">B) has had</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q3" value="had" class="form-radio text-blue-600">
+          <span class="ml-2">C) had</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q3" value="was having" class="form-radio text-blue-600">
+          <span class="ml-2">D) was having</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 5: I ______ already eaten when she called.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q4" value="had" class="form-radio text-blue-600">
+          <span class="ml-2">A) had</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q4" value="have" class="form-radio text-blue-600">
+          <span class="ml-2">B) have</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q4" value="was" class="form-radio text-blue-600">
+          <span class="ml-2">C) was</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q4" value="had already" class="form-radio text-blue-600">
+          <span class="ml-2">D) had</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 6: I ______ tennis every weekend.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q5" value="play" class="form-radio text-blue-600">
+          <span class="ml-2">A) play</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q5" value="played" class="form-radio text-blue-600">
+          <span class="ml-2">B) played</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q5" value="am playing" class="form-radio text-blue-600">
+          <span class="ml-2">C) am playing</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q5" value="have played" class="form-radio text-blue-600">
+          <span class="ml-2">D) have played</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 7: Tomorrow at 10, she ______ an exam.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q6" value="is taking" class="form-radio text-blue-600">
+          <span class="ml-2">A) is taking</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q6" value="takes" class="form-radio text-blue-600">
+          <span class="ml-2">B) takes</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q6" value="will be taking" class="form-radio text-blue-600">
+          <span class="ml-2">C) will be taking</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q6" value="take" class="form-radio text-blue-600">
+          <span class="ml-2">D) take</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 8: We ______ dinner at 7 p.m. every day.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q7" value="have" class="form-radio text-blue-600">
+          <span class="ml-2">A) have</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q7" value="has" class="form-radio text-blue-600">
+          <span class="ml-2">B) has</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q7" value="had" class="form-radio text-blue-600">
+          <span class="ml-2">C) had</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q7" value="having" class="form-radio text-blue-600">
+          <span class="ml-2">D) having</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 9: We ______ dinner when the guests arrived.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q8" value="have" class="form-radio text-blue-600">
+          <span class="ml-2">A) have</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q8" value="had" class="form-radio text-blue-600">
+          <span class="ml-2">B) had</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q8" value="were having" class="form-radio text-blue-600">
+          <span class="ml-2">C) were having</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q8" value="have had" class="form-radio text-blue-600">
+          <span class="ml-2">D) have had</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 10: By next year, they ______ in Canada.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q9" value="will live" class="form-radio text-blue-600">
+          <span class="ml-2">A) will live</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q9" value="will have lived" class="form-radio text-blue-600">
+          <span class="ml-2">B) will have lived</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q9" value="live" class="form-radio text-blue-600">
+          <span class="ml-2">C) live</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q9" value="lived" class="form-radio text-blue-600">
+          <span class="ml-2">D) lived</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 11: He ______ TV when the lights went out.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q10" value="watched" class="form-radio text-blue-600">
+          <span class="ml-2">A) watched</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q10" value="was watching" class="form-radio text-blue-600">
+          <span class="ml-2">B) was watching</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q10" value="is watching" class="form-radio text-blue-600">
+          <span class="ml-2">C) is watching</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q10" value="had watched" class="form-radio text-blue-600">
+          <span class="ml-2">D) had watched</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 12: She ______ him for 5 years.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q11" value="knew" class="form-radio text-blue-600">
+          <span class="ml-2">A) knew</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q11" value="knows" class="form-radio text-blue-600">
+          <span class="ml-2">B) knows</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q11" value="has known" class="form-radio text-blue-600">
+          <span class="ml-2">C) has known</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q11" value="is knowing" class="form-radio text-blue-600">
+          <span class="ml-2">D) is knowing</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 13: She ______ shopping when I saw her.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q12" value="is" class="form-radio text-blue-600">
+          <span class="ml-2">A) is</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q12" value="was" class="form-radio text-blue-600">
+          <span class="ml-2">B) was</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q12" value="were" class="form-radio text-blue-600">
+          <span class="ml-2">C) were</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q12" value="has been" class="form-radio text-blue-600">
+          <span class="ml-2">D) has been</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 14: She ______ home before 8 p.m.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q13" value="has arrived" class="form-radio text-blue-600">
+          <span class="ml-2">A) has arrived</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q13" value="had arrived" class="form-radio text-blue-600">
+          <span class="ml-2">B) had arrived</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q13" value="arrives" class="form-radio text-blue-600">
+          <span class="ml-2">C) arrives</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q13" value="was arriving" class="form-radio text-blue-600">
+          <span class="ml-2">D) was arriving</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 15: You ______ a book when I came in.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q14" value="read" class="form-radio text-blue-600">
+          <span class="ml-2">A) read</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q14" value="were reading" class="form-radio text-blue-600">
+          <span class="ml-2">B) were reading</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q14" value="had read" class="form-radio text-blue-600">
+          <span class="ml-2">C) had read</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q14" value="reading" class="form-radio text-blue-600">
+          <span class="ml-2">D) reading</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 16: She usually ______ at 7 a.m.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q15" value="wake up" class="form-radio text-blue-600">
+          <span class="ml-2">A) wake up</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q15" value="woke up" class="form-radio text-blue-600">
+          <span class="ml-2">B) woke up</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q15" value="wakes up" class="form-radio text-blue-600">
+          <span class="ml-2">C) wakes up</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q15" value="has woken up" class="form-radio text-blue-600">
+          <span class="ml-2">D) has woken up</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 17: We ______ here for two hours.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q16" value="have waited" class="form-radio text-blue-600">
+          <span class="ml-2">A) have waited</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q16" value="have been waiting" class="form-radio text-blue-600">
+          <span class="ml-2">B) have been waiting</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q16" value="wait" class="form-radio text-blue-600">
+          <span class="ml-2">C) wait</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q16" value="waited" class="form-radio text-blue-600">
+          <span class="ml-2">D) waited</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 18: They ______ the project by next week.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q17" value="finish" class="form-radio text-blue-600">
+          <span class="ml-2">A) finish</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q17" value="will finish" class="form-radio text-blue-600">
+          <span class="ml-2">B) will finish</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q17" value="will have finished" class="form-radio text-blue-600">
+          <span class="ml-2">C) will have finished</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q17" value="finished" class="form-radio text-blue-600">
+          <span class="ml-2">D) finished</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 19: By 2025, he ______ the company for 10 years.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q18" value="will join" class="form-radio text-blue-600">
+          <span class="ml-2">A) will join</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q18" value="joins" class="form-radio text-blue-600">
+          <span class="ml-2">B) joins</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q18" value="will have joined" class="form-radio text-blue-600">
+          <span class="ml-2">C) will have joined</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q18" value="joined" class="form-radio text-blue-600">
+          <span class="ml-2">D) joined</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 20: He ______ football when he was younger.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q19" value="plays" class="form-radio text-blue-600">
+          <span class="ml-2">A) plays</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q19" value="played" class="form-radio text-blue-600">
+          <span class="ml-2">B) played</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q19" value="was playing" class="form-radio text-blue-600">
+          <span class="ml-2">C) was playing</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q19" value="has played" class="form-radio text-blue-600">
+          <span class="ml-2">D) has played</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 21: I ______ my keys! I can&#x27;t find them.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q20" value="lose" class="form-radio text-blue-600">
+          <span class="ml-2">A) lose</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q20" value="lost" class="form-radio text-blue-600">
+          <span class="ml-2">B) lost</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q20" value="have lost" class="form-radio text-blue-600">
+          <span class="ml-2">C) have lost</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q20" value="had lost" class="form-radio text-blue-600">
+          <span class="ml-2">D) had lost</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 22: By next month, I ______ here for a year.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q21" value="will be" class="form-radio text-blue-600">
+          <span class="ml-2">A) will be</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q21" value="will have been" class="form-radio text-blue-600">
+          <span class="ml-2">B) will have been</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q21" value="am" class="form-radio text-blue-600">
+          <span class="ml-2">C) am</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q21" value="was" class="form-radio text-blue-600">
+          <span class="ml-2">D) was</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 23: She ______ to school every day.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q22" value="go" class="form-radio text-blue-600">
+          <span class="ml-2">A) go</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q22" value="goes" class="form-radio text-blue-600">
+          <span class="ml-2">B) goes</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q22" value="gone" class="form-radio text-blue-600">
+          <span class="ml-2">C) gone</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q22" value="going" class="form-radio text-blue-600">
+          <span class="ml-2">D) going</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 24: He ______ when the phone rang.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q23" value="slept" class="form-radio text-blue-600">
+          <span class="ml-2">A) slept</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q23" value="was sleeping" class="form-radio text-blue-600">
+          <span class="ml-2">B) was sleeping</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q23" value="had slept" class="form-radio text-blue-600">
+          <span class="ml-2">C) had slept</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q23" value="has slept" class="form-radio text-blue-600">
+          <span class="ml-2">D) has slept</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 25: She ______ to the store when it started raining.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q24" value="goes" class="form-radio text-blue-600">
+          <span class="ml-2">A) goes</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q24" value="is going" class="form-radio text-blue-600">
+          <span class="ml-2">B) is going</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q24" value="was going" class="form-radio text-blue-600">
+          <span class="ml-2">C) was going</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q24" value="gone" class="form-radio text-blue-600">
+          <span class="ml-2">D) gone</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 26: They ______ in London for 5 years now.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q25" value="live" class="form-radio text-blue-600">
+          <span class="ml-2">A) live</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q25" value="lived" class="form-radio text-blue-600">
+          <span class="ml-2">B) lived</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q25" value="have lived" class="form-radio text-blue-600">
+          <span class="ml-2">C) have lived</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q25" value="had lived" class="form-radio text-blue-600">
+          <span class="ml-2">D) had lived</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 27: He ______ to bed when I got home.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q26" value="went" class="form-radio text-blue-600">
+          <span class="ml-2">A) went</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q26" value="was going" class="form-radio text-blue-600">
+          <span class="ml-2">B) was going</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q26" value="had gone" class="form-radio text-blue-600">
+          <span class="ml-2">C) had gone</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q26" value="goes" class="form-radio text-blue-600">
+          <span class="ml-2">D) goes</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 28: They ______ a movie when I called.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q27" value="watch" class="form-radio text-blue-600">
+          <span class="ml-2">A) watch</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q27" value="are watching" class="form-radio text-blue-600">
+          <span class="ml-2">B) are watching</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q27" value="watched" class="form-radio text-blue-600">
+          <span class="ml-2">C) watched</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q27" value="were watching" class="form-radio text-blue-600">
+          <span class="ml-2">D) were watching</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 29: I ______ this movie before.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q28" value="see" class="form-radio text-blue-600">
+          <span class="ml-2">A) see</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q28" value="saw" class="form-radio text-blue-600">
+          <span class="ml-2">B) saw</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q28" value="have seen" class="form-radio text-blue-600">
+          <span class="ml-2">C) have seen</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q28" value="had seen" class="form-radio text-blue-600">
+          <span class="ml-2">D) had seen</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 30: This time tomorrow, I ______ on the beach.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q29" value="am lying" class="form-radio text-blue-600">
+          <span class="ml-2">A) am lying</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q29" value="will be lying" class="form-radio text-blue-600">
+          <span class="ml-2">B) will be lying</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q29" value="lie" class="form-radio text-blue-600">
+          <span class="ml-2">C) lie</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q29" value="lying" class="form-radio text-blue-600">
+          <span class="ml-2">D) lying</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 31: We ______ in this town since 2010.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q30" value="live" class="form-radio text-blue-600">
+          <span class="ml-2">A) live</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q30" value="have lived" class="form-radio text-blue-600">
+          <span class="ml-2">B) have lived</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q30" value="lived" class="form-radio text-blue-600">
+          <span class="ml-2">C) lived</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q30" value="are living" class="form-radio text-blue-600">
+          <span class="ml-2">D) are living</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 32: They ______ for 3 hours before we arrived.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q31" value="had worked" class="form-radio text-blue-600">
+          <span class="ml-2">A) had worked</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q31" value="worked" class="form-radio text-blue-600">
+          <span class="ml-2">B) worked</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q31" value="work" class="form-radio text-blue-600">
+          <span class="ml-2">C) work</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q31" value="have worked" class="form-radio text-blue-600">
+          <span class="ml-2">D) have worked</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 33: I ______ to Paris three times.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q32" value="go" class="form-radio text-blue-600">
+          <span class="ml-2">A) go</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q32" value="went" class="form-radio text-blue-600">
+          <span class="ml-2">B) went</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q32" value="have been" class="form-radio text-blue-600">
+          <span class="ml-2">C) have been</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q32" value="was going" class="form-radio text-blue-600">
+          <span class="ml-2">D) was going</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 34: I ______ my homework already.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q33" value="did" class="form-radio text-blue-600">
+          <span class="ml-2">A) did</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q33" value="have done" class="form-radio text-blue-600">
+          <span class="ml-2">B) have done</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q33" value="do" class="form-radio text-blue-600">
+          <span class="ml-2">C) do</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q33" value="had done" class="form-radio text-blue-600">
+          <span class="ml-2">D) had done</span>
+        </label>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="font-semibold mb-4">ข้อ 35: They ______ lunch by the time we arrived.</p>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q34" value="have eaten" class="form-radio text-blue-600">
+          <span class="ml-2">A) have eaten</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q34" value="ate" class="form-radio text-blue-600">
+          <span class="ml-2">B) ate</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q34" value="had eaten" class="form-radio text-blue-600">
+          <span class="ml-2">C) had eaten</span>
+        </label>
+      </div>
+    
+      <div>
+        <label class="inline-flex items-center">
+          <input type="radio" name="q34" value="were eating" class="form-radio text-blue-600">
+          <span class="ml-2">D) were eating</span>
+        </label>
+      </div>
+    </div>
+      <div class="text-center">
+        <button type="submit" class="bg-blue-800 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">Submit</button>
+      </div>
+    
+      <div class="text-center mt-8">
+        <button type="button" onclick="checkAnswers()" class="bg-blue-800 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">
+          Submit Answers
+        </button>
+      </div>
+</form>
+
+    <div id="result" class="text-center text-2xl font-bold text-green-700 mt-8"></div>
+  </main>
+
+  <footer class="bg-blue-900 text-white text-center py-4">
+    <p>&copy; 2025 Smart Learning System. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('quizForm');
+    const result = document.getElementById('result');
+    const answers = ["has been playing", "has been working", "leaves", "had", "had", "play", "will be taking", "have", "were having", "will have lived", "was watching", "has known", "was", "had arrived", "were reading", "wakes up", "have been waiting", "will have finished", "will have joined", "played", "have lost", "will have been", "goes", "was sleeping", "was going", "have lived", "had gone", "were watching", "have seen", "will be lying", "have lived", "had worked", "have been", "have done", "had eaten"];
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      let score = 0;
+      for (let i = 0; i < answers.length; i++) {
+        const selected = form.querySelector('input[name="q' + i + '"]:checked');
+        if (selected && selected.value === answers[i]) {
+          score++;
+        }
+      }
+      result.textContent = `คุณตอบถูก ${score} ข้อ จากทั้งหมด ${answers.length} ข้อ`;
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    });
+  </script>
+  <button onclick="window.history.back()"class="fixed top-4 left-4 text-white text-2xl hover:text-yellow-300 font-bold py-2 px-4 z-50 ">
+    ⇦
+  </button>
+
+<script>
+  async function checkAnswers() {
+    const form = document.getElementById('quizForm') || document.querySelector('form');
+    const answers = form ? form.querySelectorAll('input[type="radio"]:checked') : [];
+    const total = (form ? form.querySelectorAll('.bg-white.p-6.rounded-lg.shadow').length : 0) || (form ? form.querySelectorAll('h3').length : 0) || answers.length || 20;
+    let score = 0;
+    answers.forEach(ans => { if (ans.value === "true") score++; });
+    const result = document.getElementById('result');
+    if (result) result.innerText = `You got ${score} out of ${total} correct.`;
+
+    try {
+      const items = window.__attemptsClient ? window.__attemptsClient.buildItemsFromForm(form) : [];
+      await (window.__attemptsClient ? window.__attemptsClient.saveAttempt({
+        topic: document.title || "Tenses Quiz",
+        quizType: "topic",
+        score,
+        total: items.length || total,
+        durationSec: Math.floor((Date.now() - (window.QUIZ_STARTED_AT || Date.now())) / 1000),
+        startedAt: new Date(window.QUIZ_STARTED_AT || Date.now()).toISOString(),
+        items
+      }) : Promise.resolve());
+      console.log("Attempt saved!");
+    } catch (e) {
+      console.error("Failed to save attempt:", e);
+    }
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Causative Quiz</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/attempts-client.js"></script>
+  <script>const QUIZ_STARTED_AT = Date.now();</script>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+  <header class="bg-blue-900 text-white py-6 shadow">
+    <div class="container mx-auto flex justify-between items-center px-6">
+      <h1 class="text-2xl font-bold">English Adjuster</h1>
+      <nav>
+        <a href="../index.html" class="mr-4 hover:text-yellow-300">Home</a>
+        <a href="../lessons/lessons.html" class="mr-4 hover:text-yellow-300">Lessons</a>
+        <a href="quiz.html" class="hover:text-yellow-300">Quizzes</a>
+        <a href="../profile.html" class="text-3xl text-yellow-300">👤</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-6 py-12 flex-grow">
+    <section class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-blue-900 mb-4">Causative Quiz</h2>
+      <p class="text-lg">เลือกคำตอบที่ถูกต้องเกี่ยวกับโครงสร้าง Passive และ Active Causative</p>
+    </section>
+
+    <form id="quizForm">
+
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 1: I had my house ___ last week.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q1" value="false" class="mr-2" />
+          paint
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q1" value="true" class="mr-2" />
+          painted
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q1" value="false" class="mr-2" />
+          painting
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q1" value="false" class="mr-2" />
+          paints
+        </label>
+        
+    </div>
+    
+
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 2: She got her phone ___ by a technician.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q2" value="false" class="mr-2" />
+          fixing
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q2" value="true" class="mr-2" />
+          fixed
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q2" value="false" class="mr-2" />
+          fixes
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q2" value="false" class="mr-2" />
+          fix
+        </label>
+        
+    </div>
+    
+
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 3: They had the documents ___ by the lawyer.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q3" value="false" class="mr-2" />
+          checking
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q3" value="false" class="mr-2" />
+          check
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q3" value="false" class="mr-2" />
+          checks
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q3" value="true" class="mr-2" />
+          checked
+        </label>
+        
+    </div>
+    
+
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 4: We got the car ___ yesterday.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q4" value="false" class="mr-2" />
+          wash
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q4" value="false" class="mr-2" />
+          washes
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q4" value="true" class="mr-2" />
+          washed
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q4" value="false" class="mr-2" />
+          washing
+        </label>
+        
+    </div>
+    
+
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 5: She had her hair ___ at the salon.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q5" value="true" class="mr-2" />
+          cut
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q5" value="false" class="mr-2" />
+          cuts
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q5" value="false" class="mr-2" />
+          cutting
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q5" value="false" class="mr-2" />
+          cuted
+        </label>
+        
+    </div>
+    
+
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 6: He got his watch ___.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q6" value="false" class="mr-2" />
+          repairs
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q6" value="false" class="mr-2" />
+          repairing
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q6" value="true" class="mr-2" />
+          repaired
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q6" value="false" class="mr-2" />
+          repair
+        </label>
+        
+    </div>
+    
+
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 7: The manager had the office ___.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q7" value="false" class="mr-2" />
+          clean
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q7" value="true" class="mr-2" />
+          cleaned
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q7" value="false" class="mr-2" />
+          cleaning
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q7" value="false" class="mr-2" />
+          cleans
+        </label>
+        
+    </div>
+    
+
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 8: We got the wedding ___ by a professional planner.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q8" value="false" class="mr-2" />
+          organizing
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q8" value="true" class="mr-2" />
+          organized
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q8" value="false" class="mr-2" />
+          organize
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q8" value="false" class="mr-2" />
+          organizes
+        </label>
+        
+    </div>
+    
+
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 9: I had my passport ___.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q9" value="false" class="mr-2" />
+          renew
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q9" value="true" class="mr-2" />
+          renewed
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q9" value="false" class="mr-2" />
+          renews
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q9" value="false" class="mr-2" />
+          renewing
+        </label>
+        
+    </div>
+    
+
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 10: She got her computer ___ after the crash.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q10" value="false" class="mr-2" />
+          repairing
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q10" value="true" class="mr-2" />
+          repaired
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q10" value="false" class="mr-2" />
+          repair
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q10" value="false" class="mr-2" />
+          repairs
+        </label>
+        
+    </div>
+    
+
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 11: The teacher made the students ___ the assignments again.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q11" value="false" class="mr-2" />
+          redid
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q11" value="true" class="mr-2" />
+          redo
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q11" value="false" class="mr-2" />
+          redoing
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q11" value="false" class="mr-2" />
+          to redo
+        </label>
+        
+    </div>
+    
+
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 12: They let the children ___ late on weekends.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q12" value="false" class="mr-2" />
+          staying
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q12" value="true" class="mr-2" />
+          stay
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q12" value="false" class="mr-2" />
+          stayed
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q12" value="false" class="mr-2" />
+          to stay
+        </label>
+        
+    </div>
+    
+
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 13: He had the gardener ___ the lawn.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q13" value="false" class="mr-2" />
+          mowing
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q13" value="false" class="mr-2" />
+          mows
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q13" value="true" class="mr-2" />
+          mow
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q13" value="false" class="mr-2" />
+          mowed
+        </label>
+        
+    </div>
+    
+
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 14: We got the electrician ___ the wiring.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q14" value="false" class="mr-2" />
+          fix
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q14" value="true" class="mr-2" />
+          to fix
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q14" value="false" class="mr-2" />
+          fixing
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q14" value="false" class="mr-2" />
+          fixed
+        </label>
+        
+    </div>
+    
+
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 15: She had the assistant ___ the documents.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q15" value="false" class="mr-2" />
+          prepared
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q15" value="true" class="mr-2" />
+          prepare
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q15" value="false" class="mr-2" />
+          prepares
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q15" value="false" class="mr-2" />
+          preparing
+        </label>
+        
+    </div>
+    
+
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 16: I got my brother ___ me with the project.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q16" value="true" class="mr-2" />
+          to help
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q16" value="false" class="mr-2" />
+          helped
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q16" value="false" class="mr-2" />
+          help
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q16" value="false" class="mr-2" />
+          helping
+        </label>
+        
+    </div>
+    
+
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 17: They had their apartment ___ while they were away.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q17" value="false" class="mr-2" />
+          burgle
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q17" value="false" class="mr-2" />
+          burgles
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q17" value="false" class="mr-2" />
+          burgling
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q17" value="true" class="mr-2" />
+          burgled
+        </label>
+        
+    </div>
+    
+
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 18: She made her assistant ___ the entire report overnight.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q18" value="false" class="mr-2" />
+          to rewrite
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q18" value="false" class="mr-2" />
+          rewrote
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q18" value="false" class="mr-2" />
+          rewriting
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q18" value="true" class="mr-2" />
+          rewrite
+        </label>
+        
+    </div>
+    
+
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 19: The director got the actors ___ the scene again and again.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q19" value="true" class="mr-2" />
+          to perform
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q19" value="false" class="mr-2" />
+          perform
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q19" value="false" class="mr-2" />
+          performed
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q19" value="false" class="mr-2" />
+          performing
+        </label>
+        
+    </div>
+    
+
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 20: He had the package ___ to the wrong address.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q20" value="true" class="mr-2" />
+          delivered
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q20" value="false" class="mr-2" />
+          delivers
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q20" value="false" class="mr-2" />
+          delivering
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q20" value="false" class="mr-2" />
+          deliver
+        </label>
+        
+    </div>
+    
+      <div class="text-center mt-8">
+        <button type="button" onclick="checkAnswers()" class="bg-blue-800 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">
+          Submit Answers
+        </button>
+      </div>
+    </form>
+
+    <div id="result" class="text-center mt-8 text-2xl font-bold text-blue-800"></div>
+  </main>
+
+  <footer class="bg-blue-900 text-white py-6 mt-12">
+    <div class="container mx-auto px-6 text-center">
+      © 2025 Smart Learning System. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    function checkAnswers() {
+      const form = document.getElementById('quizForm');
+      const answers = form.querySelectorAll('input[type="radio"]:checked');
+      let score = 0;
+      answers.forEach(ans => {
+        if (ans.value === "true") score++;
+      });
+      const result = document.getElementById('result');
+      result.innerText = `You got ${score} out of 20 correct.`;
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+  </script>
+  <button onclick="window.history.back()"class="fixed top-4 left-4 text-white text-2xl hover:text-yellow-300 font-bold py-2 px-4 z-50 ">
+    ⇦
+  </button>
+</body>
+</html>

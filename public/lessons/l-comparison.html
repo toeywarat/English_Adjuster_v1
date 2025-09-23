@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comparison</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="bg-blue-900 text-white py-6 shadow">
+    <div class="container mx-auto flex justify-between items-center px-6">
+      <h1 class="text-2xl font-bold">English Adjuster</h1>
+      <nav>
+        <a href="../index.html" class="mr-4 hover:text-yellow-300">Home</a>
+        <a href="lessons.html" class="mr-4 hover:text-yellow-300">Lessons</a>
+        <a href="../quizzes/quiz.html" class=" hover:text-yellow-300">Quizzes</a>
+        <a href="../profile.html" class="text-3xl text-yellow-300">👤</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="container mx-auto px-6 py-12 flex-grow">
+    <section class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-blue-900 mb-4">Comparison</h2>
+      <p class="text-lg">การเปรียบเทียบ (Comparison) ในภาษาอังกฤษมีไว้เพื่อเปรียบเทียบสิ่งของ คน หรือสถานการณ์ที่ต่างกัน โดยแบ่งออกเป็น 2 รูปแบบหลัก</p>
+    </section>
+
+    <section class="grid gap-6">
+      <!-- Comparative -->
+      <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+        <h3 class="text-xl font-bold text-blue-800 mb-2">🔸 1. Comparative (เปรียบเทียบ 2 สิ่ง)</h3>
+        <ul class="list-disc ml-5 space-y-2">
+          <li><strong>โครงสร้าง:</strong>
+            <ul class="list-disc ml-6">
+              <li>[Subject] + [be] + adj-er + than + [object]</li>
+              <li>หรือ: more + adjective (สำหรับคำคุณศัพท์ยาว)</li>
+            </ul>
+          </li>
+          <li><strong>ตัวอย่าง:</strong>
+            <ul class="list-decimal ml-6 space-y-1">
+              <li>This book is <strong>cheaper</strong> than that one.</li>
+              <li>My house is <strong>more beautiful</strong> than hers.</li>
+              <li>The test was <strong>harder</strong> than I expected.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Superlative -->
+      <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+        <h3 class="text-xl font-bold text-blue-800 mb-2">🔸 2. Superlative (มากที่สุดในกลุ่ม)</h3>
+        <ul class="list-disc ml-5 space-y-2">
+          <li><strong>โครงสร้าง:</strong>
+            <ul class="list-disc ml-6">
+              <li>[Subject] + [be] + the adj-est / the most + adjective</li>
+            </ul>
+          </li>
+          <li><strong>ตัวอย่าง:</strong>
+            <ul class="list-decimal ml-6 space-y-1">
+              <li>He is the <strong>tallest</strong> boy in class.</li>
+              <li>That was the <strong>most exciting</strong> game of the year.</li>
+              <li>This is the <strong>coldest</strong> winter I’ve ever experienced.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="text-center mt-12">
+      <a href="../quizzes/quiz-comparison.html" class="inline-block bg-blue-800 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">
+        Try a Comparison Quiz!
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white text-center py-4">
+    <p>&copy; 2025 Smart Learning System. All rights reserved.</p>
+  </footer>
+  <button onclick="window.history.back()"class="fixed top-4 left-4 text-white text-2xl hover:text-yellow-300 font-bold py-2 px-4 z-50 ">
+    ⇦
+  </button>
+</body>
+</html>

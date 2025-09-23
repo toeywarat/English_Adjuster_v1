@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Essential Vocabulary (Prefix/Suffix)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/attempts-client.js"></script>
+  <script>const QUIZ_STARTED_AT = Date.now();</script>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="bg-blue-900 text-white py-6 shadow">
+    <div class="container mx-auto flex justify-between items-center px-6">
+      <h1 class="text-2xl font-bold">English Adjuster</h1>
+      <nav>
+        <a href="../index.html" class="mr-4 hover:text-yellow-300">Home</a>
+        <a href="../lessons/lessons.html" class="mr-4 hover:text-yellow-300">Lessons</a>
+        <a href="quiz.html" class="mr-4 hover:text-yellow-300">Quizzes</a>
+        <a href="../profile.html" class="text-3xl text-yellow-300">👤</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="container mx-auto px-6 py-12 flex-grow">
+    <section class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-blue-900 mb-4">Essential Vocabulary (Prefix & Suffix)</h2>
+      <p class="text-lg text-gray-700">Test your understanding of word formation, prefixes, and suffixes in academic English.</p>
+    </section>
+
+    <form id="quizForm" class="space-y-8">
+      <!-- Questions injected here -->
+    
+      <div class="text-center mt-8">
+        <button type="button" onclick="checkAnswers()" class="bg-blue-800 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">
+          Submit Answers
+        </button>
+      </div>
+</form>
+    <div id="result" class="text-center mt-8 text-2xl font-bold text-blue-800"></div>
+
+
+    <div class="text-center mt-8">
+      <button onclick="submitQuiz()" class="bg-blue-700 text-white px-6 py-3 rounded hover:bg-blue-800 text-lg font-semibold">Submit</button>
+      <p id="score" class="mt-4 text-2xl font-bold text-green-700"></p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white text-center py-4">
+    <p>&copy; 2025 Smart Learning System. All rights reserved.</p>
+  </footer>
+
+  <!-- Back Button -->
+  <button onclick="window.history.back()" class="fixed top-4 left-4 text-white text-2xl hover:text-yellow-300 font-bold py-2 px-4 z-50">
+    ⇦
+  </button>
+
+  <script>
+    const questions = [
+      // EASY
+      {
+        question: "What does the prefix 'un-' mean in 'unhappy'?",
+        choices: ["before", "without", "again", "not"],
+        correctAnswer: 3
+      },
+      {
+        question: "Which word means 'able to be read'?",
+        choices: ["readable", "reader", "reading", "readful"],
+        correctAnswer: 0
+      },
+      {
+        question: "What does the suffix '-less' mean in 'hopeless'?",
+        choices: ["small", "full of", "without", "against"],
+        correctAnswer: 2
+      },
+      {
+        question: "Choose the correct meaning of 'rewrite'.",
+        choices: ["write quickly", "write again", "write slowly", "write badly"],
+        correctAnswer: 1
+      },
+      {
+        question: "What does the prefix 'pre-' mean in 'preview'?",
+        choices: ["after", "above", "again", "before"],
+        correctAnswer: 3
+      },
+      {
+        question: "Which word means 'able to break easily'?",
+        choices: ["breakful", "breaker", "breakable", "breaking"],
+        correctAnswer: 2
+      },
+      {
+        question: "'Careless' means:",
+        choices: ["without care", "very careful", "full of care", "care about something"],
+        correctAnswer: 0
+      },
+      {
+        question: "The suffix '-er' in 'teacher' means:",
+        choices: ["action", "person who", "time", "place"],
+        correctAnswer: 1
+      },
+      {
+        question: "'Misunderstand' means:",
+        choices: ["understand well", "not understand", "understand before", "understand twice"],
+        correctAnswer: 1
+      },
+      {
+        question: "What does 'disagree' mean?",
+        choices: ["agree again", "agree a little", "not agree", "very agree"],
+        correctAnswer: 2
+      },
+
+      // MEDIUM
+      {
+        question: "What does the prefix 'sub-' mean in 'submarine'?",
+        choices: ["above", "beside", "under", "over"],
+        correctAnswer: 2
+      },
+      {
+        question: "Which suffix turns an adjective into a noun (e.g. happy → ___)?",
+        choices: ["-ment", "-ness", "-er", "-ous"],
+        correctAnswer: 1
+      },
+      {
+        question: "Which word means 'not legal'?",
+        choices: ["illegal", "legal", "alegal", "prelegal"],
+        correctAnswer: 0
+      },
+      {
+        question: "The word 'biannual' means:",
+        choices: ["every two months", "twice a year", "once a year", "every two years"],
+        correctAnswer: 1
+      },
+      {
+        question: "The suffix '-ist' in 'scientist' means:",
+        choices: ["action", "place", "person", "tool"],
+        correctAnswer: 2
+      },
+      {
+        question: "'Rebuild' means:",
+        choices: ["build a house", "build later", "build wrongly", "build again"],
+        correctAnswer: 3
+      },
+
+      // HARD
+      {
+        question: "Which word means 'one who believes in peace'?",
+        choices: ["pacemaker", "peaceist", "pacifist", "peacer"],
+        correctAnswer: 2
+      },
+      {
+        question: "The suffix '-ous' in 'dangerous' means:",
+        choices: ["having the quality of", "related to", "without", "capable of"],
+        correctAnswer: 0
+      },
+      {
+        question: "The prefix 'inter-' means:",
+        choices: ["between", "against", "over", "without"],
+        correctAnswer: 0
+      },
+      {
+        question: "The word 'antifreeze' means:",
+        choices: ["before freezing", "against freezing", "after freezing", "not cold"],
+        correctAnswer: 1
+      }
+    ];
+
+    function submitQuiz() {
+      const form = document.getElementById("quizForm");
+      let score = 0;
+      questions.forEach((q, index) => {
+        const selected = form.querySelector(`input[name="q${index}"]:checked`);
+        if (selected && parseInt(selected.value) === q.correctAnswer) {
+          score++;
+        }
+      });
+      document.getElementById("score").innerText = `Your score: ${score} / ${questions.length}`;
+    }
+
+    // Render questions
+    const form = document.getElementById("quizForm");
+    questions.forEach((q, index) => {
+      const block = document.createElement("div");
+      block.innerHTML = `
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-lg font-semibold mb-4">Q${index + 1}. ${q.question}</h3>
+          ${q.choices.map((choice, i) => `
+            <label class="block mb-2">
+              <input type="radio" name="q${index}" value="${i}" class="mr-2">
+              ${choice}
+            </label>
+          `).join('')}
+        </div>
+      `;
+      form.appendChild(block);
+    });
+  </script>
+
+<script>
+  async function checkAnswers() {
+    const form = document.getElementById('quizForm') || document.querySelector('form');
+    const answers = form ? form.querySelectorAll('input[type="radio"]:checked') : [];
+    const total = (form ? form.querySelectorAll('.bg-white.p-6.rounded-lg.shadow').length : 0) || (form ? form.querySelectorAll('h3').length : 0) || answers.length || 20;
+    let score = 0;
+    answers.forEach(ans => { if (ans.value === "true") score++; });
+    const result = document.getElementById('result');
+    if (result) result.innerText = `You got ${score} out of ${total} correct.`;
+
+    try {
+      const items = window.__attemptsClient ? window.__attemptsClient.buildItemsFromForm(form) : [];
+      await (window.__attemptsClient ? window.__attemptsClient.saveAttempt({
+        topic: document.title || "Essential Vocabulary (Prefix/Suffix)",
+        quizType: "topic",
+        score,
+        total: items.length || total,
+        durationSec: Math.floor((Date.now() - (window.QUIZ_STARTED_AT || Date.now())) / 1000),
+        startedAt: new Date(window.QUIZ_STARTED_AT || Date.now()).toISOString(),
+        items
+      }) : Promise.resolve());
+      console.log("Attempt saved!");
+    } catch (e) {
+      console.error("Failed to save attempt:", e);
+    }
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>

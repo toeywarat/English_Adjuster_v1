@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subject-Verb Agreement</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/attempts-client.js"></script>
+  <script>const QUIZ_STARTED_AT = Date.now();</script>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="bg-blue-900 text-white py-6 shadow">
+    <div class="container mx-auto flex justify-between items-center px-6">
+      <h1 class="text-2xl font-bold">English Adjuster</h1>
+      <nav>
+        <a href="../index.html" class="mr-4 hover:text-yellow-300">Home</a>
+        <a href="../lessons/lessons.html" class="mr-4 hover:text-yellow-300">Lessons</a>
+        <a href="quiz.html" class="mr-4 hover:text-yellow-300">Quizzes</a>
+        <a href="../profile.html" class="text-3xl text-yellow-300">👤</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="container mx-auto px-6 py-12 flex-grow">
+    <section class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-blue-900 mb-4">Subject-Verb Agreement</h2>
+      <p class="text-lg text-gray-700">Choose the correct verb form to agree with the subject in each sentence.</p>
+    </section>
+
+    <form id="quizForm" class="space-y-8">
+      <!-- Questions will be inserted here by JavaScript -->
+    
+      <div class="text-center mt-8">
+        <button type="button" onclick="checkAnswers()" class="bg-blue-800 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">
+          Submit Answers
+        </button>
+      </div>
+</form>
+    <div id="result" class="text-center mt-8 text-2xl font-bold text-blue-800"></div>
+
+
+    <div class="text-center mt-8">
+      <button onclick="submitQuiz()" class="bg-blue-700 text-white px-6 py-3 rounded hover:bg-blue-800 text-lg font-semibold">Submit</button>
+      <p id="score" class="mt-4 text-2xl font-bold text-green-700"></p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white text-center py-4">
+    <p>&copy; 2025 Smart Learning System. All rights reserved.</p>
+  </footer>
+
+  <!-- Back Button -->
+  <button onclick="window.history.back()" class="fixed top-4 left-4 text-white text-2xl hover:text-yellow-300 font-bold py-2 px-4 z-50">
+    ⇦
+  </button>
+
+  <script>
+    const questions = [
+      // Easy (1-10)
+      {
+        question: "She ___ to school every day.",
+        choices: ["go", "goes", "gone", "going"],
+        correctAnswer: 1
+      },
+      {
+        question: "They ___ in the library right now.",
+        choices: ["is", "was", "are", "has"],
+        correctAnswer: 2
+      },
+      {
+        question: "The dog ___ loudly every night.",
+        choices: ["bark", "barked", "barks", "barking"],
+        correctAnswer: 2
+      },
+      {
+        question: "My parents ___ very kind.",
+        choices: ["is", "are", "was", "has"],
+        correctAnswer: 1
+      },
+      {
+        question: "He ___ a great guitar player.",
+        choices: ["are", "is", "were", "be"],
+        correctAnswer: 1
+      },
+      {
+        question: "These apples ___ fresh.",
+        choices: ["look", "looks", "looking", "looked"],
+        correctAnswer: 0
+      },
+      {
+        question: "My brother ___ basketball every weekend.",
+        choices: ["play", "plays", "playing", "played"],
+        correctAnswer: 1
+      },
+      {
+        question: "The students ___ taking the exam.",
+        choices: ["is", "was", "are", "has"],
+        correctAnswer: 2
+      },
+      {
+        question: "That book ___ on the shelf.",
+        choices: ["are", "is", "be", "were"],
+        correctAnswer: 1
+      },
+      {
+        question: "Tom and Jerry ___ cartoon characters.",
+        choices: ["is", "are", "has", "was"],
+        correctAnswer: 1
+      },
+
+      // Medium (11–16)
+      {
+        question: "Neither the teacher nor the students ___ happy about the schedule.",
+        choices: ["is", "was", "are", "has"],
+        correctAnswer: 2
+      },
+      {
+        question: "The news ___ shocking to everyone.",
+        choices: ["were", "are", "is", "have been"],
+        correctAnswer: 2
+      },
+      {
+        question: "Each of the boys ___ a story to tell.",
+        choices: ["have", "has", "are", "were"],
+        correctAnswer: 1
+      },
+      {
+        question: "The team ___ winning every game this season.",
+        choices: ["are", "is", "have", "be"],
+        correctAnswer: 1
+      },
+      {
+        question: "Neither my mom nor my dad ___ at home.",
+        choices: ["are", "is", "has", "have"],
+        correctAnswer: 1
+      },
+      {
+        question: "Ten dollars ___ enough to buy the book.",
+        choices: ["are", "is", "were", "have"],
+        correctAnswer: 1
+      },
+
+      // Hard (17–20)
+      {
+        question: "The committee ___ agreed to postpone the meeting.",
+        choices: ["has", "have", "is", "are"],
+        correctAnswer: 1
+      },
+      {
+        question: "The number of applicants ___ increasing every year.",
+        choices: ["are", "is", "were", "be"],
+        correctAnswer: 1
+      },
+      {
+        question: "Either the manager or his assistants ___ attending the event.",
+        choices: ["is", "are", "has", "was"],
+        correctAnswer: 1
+      },
+      {
+        question: "A bouquet of roses ___ on the table.",
+        choices: ["are", "were", "is", "have"],
+        correctAnswer: 2
+      }
+    ];
+
+    function submitQuiz() {
+      const form = document.getElementById("quizForm");
+      let score = 0;
+      questions.forEach((q, index) => {
+        const selected = form.querySelector(`input[name="q${index}"]:checked`);
+        if (selected && parseInt(selected.value) === q.correctAnswer) {
+          score++;
+        }
+      });
+      document.getElementById("score").innerText = `Your score: ${score} / ${questions.length}`;
+    }
+
+    // Render questions
+    const form = document.getElementById("quizForm");
+    questions.forEach((q, index) => {
+      const block = document.createElement("div");
+      block.innerHTML = `
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-lg font-semibold mb-4">Q${index + 1}. ${q.question}</h3>
+          ${q.choices.map((choice, i) => `
+            <label class="block mb-2">
+              <input type="radio" name="q${index}" value="${i}" class="mr-2">
+              ${choice}
+            </label>
+          `).join('')}
+        </div>
+      `;
+      form.appendChild(block);
+    });
+  </script>
+
+<script>
+  async function checkAnswers() {
+    const form = document.getElementById('quizForm') || document.querySelector('form');
+    const answers = form ? form.querySelectorAll('input[type="radio"]:checked') : [];
+    const total = (form ? form.querySelectorAll('.bg-white.p-6.rounded-lg.shadow').length : 0) || (form ? form.querySelectorAll('h3').length : 0) || answers.length || 20;
+    let score = 0;
+    answers.forEach(ans => { if (ans.value === "true") score++; });
+    const result = document.getElementById('result');
+    if (result) result.innerText = `You got ${score} out of ${total} correct.`;
+
+    try {
+      const items = window.__attemptsClient ? window.__attemptsClient.buildItemsFromForm(form) : [];
+      await (window.__attemptsClient ? window.__attemptsClient.saveAttempt({
+        topic: document.title || "Subject-Verb Agreement",
+        quizType: "topic",
+        score,
+        total: items.length || total,
+        durationSec: Math.floor((Date.now() - (window.QUIZ_STARTED_AT || Date.now())) / 1000),
+        startedAt: new Date(window.QUIZ_STARTED_AT || Date.now()).toISOString(),
+        items
+      }) : Promise.resolve());
+      console.log("Attempt saved!");
+    } catch (e) {
+      console.error("Failed to save attempt:", e);
+    }
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>

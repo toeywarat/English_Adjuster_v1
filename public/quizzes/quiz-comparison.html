@@ -1,0 +1,566 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Comparison Quiz</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/attempts-client.js"></script>
+  <script>const QUIZ_STARTED_AT = Date.now();</script>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+  <header class="bg-blue-900 text-white py-6 shadow">
+    <div class="container mx-auto flex justify-between items-center px-6">
+      <h1 class="text-2xl font-bold">English Adjuster</h1>
+      <nav>
+        <a href="../index.html" class="mr-4 hover:text-yellow-300">Home</a>
+        <a href="../lessons/lessons.html" class="mr-4 hover:text-yellow-300">Lessons</a>
+        <a href="quiz.html" class="hover:text-yellow-300">Quizzes</a>
+        <a href="../profile.html" class="text-3xl text-yellow-300">👤</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-6 py-12 flex-grow">
+    <section class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-blue-900 mb-4">Comparison Quiz</h2>
+      <p class="text-lg">เลือกคำตอบที่ถูกต้องเกี่ยวกับ Comparative และ Superlative</p>
+    </section>
+
+    <form id="quizForm">
+      
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 1: She is ___ than her sister.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q1" value="false" class="mr-2" />
+          tall
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q1" value="false" class="mr-2" />
+          most tall
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q1" value="true" class="mr-2" />
+          taller
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q1" value="false" class="mr-2" />
+          tallest
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 2: This book is ___ than the one I read last week.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q2" value="false" class="mr-2" />
+          most interesting
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q2" value="false" class="mr-2" />
+          interesting
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q2" value="false" class="mr-2" />
+          interester
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q2" value="true" class="mr-2" />
+          more interesting
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 3: He is the ___ student in our class.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q3" value="false" class="mr-2" />
+          most smart
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q3" value="false" class="mr-2" />
+          smarter
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q3" value="true" class="mr-2" />
+          smartest
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q3" value="false" class="mr-2" />
+          smart
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 4: Today is ___ than yesterday.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q4" value="true" class="mr-2" />
+          hotter
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q4" value="false" class="mr-2" />
+          hot
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q4" value="false" class="mr-2" />
+          hottest
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q4" value="false" class="mr-2" />
+          most hot
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 5: Of all the runners, Tom is the ___.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q5" value="true" class="mr-2" />
+          fastest
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q5" value="false" class="mr-2" />
+          fast
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q5" value="false" class="mr-2" />
+          more fast
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q5" value="false" class="mr-2" />
+          faster
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 6: My cat is ___ than my dog.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q6" value="false" class="mr-2" />
+          small
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q6" value="false" class="mr-2" />
+          smallest
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q6" value="true" class="mr-2" />
+          smaller
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q6" value="false" class="mr-2" />
+          most small
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 7: This movie is ___ than the last one.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q7" value="false" class="mr-2" />
+          excitinger
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q7" value="false" class="mr-2" />
+          excitingest
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q7" value="false" class="mr-2" />
+          most excited
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q7" value="true" class="mr-2" />
+          more exciting
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 8: That mountain is the ___ in the region.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q8" value="true" class="mr-2" />
+          highest
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q8" value="false" class="mr-2" />
+          high
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q8" value="false" class="mr-2" />
+          higher
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q8" value="false" class="mr-2" />
+          more high
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 9: My bag is ___ than yours.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q9" value="true" class="mr-2" />
+          heavier
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q9" value="false" class="mr-2" />
+          more heavy
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q9" value="false" class="mr-2" />
+          heavy
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q9" value="false" class="mr-2" />
+          heaviest
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 10: Of the two shirts, the blue one is ___.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q10" value="true" class="mr-2" />
+          nicer
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q10" value="false" class="mr-2" />
+          most nice
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q10" value="false" class="mr-2" />
+          nice
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q10" value="false" class="mr-2" />
+          nicest
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 11: Which is ___, math or science?</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q11" value="true" class="mr-2" />
+          harder
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q11" value="false" class="mr-2" />
+          hard
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q11" value="false" class="mr-2" />
+          most hard
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q11" value="false" class="mr-2" />
+          hardest
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 12: That was the ___ movie I&#x27;ve ever seen!</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q12" value="false" class="mr-2" />
+          boringer
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q12" value="false" class="mr-2" />
+          more boring
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q12" value="false" class="mr-2" />
+          boringest
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q12" value="true" class="mr-2" />
+          most boring
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 13: She runs ___ than anyone else on the team.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q13" value="false" class="mr-2" />
+          more fast
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q13" value="false" class="mr-2" />
+          fastest
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q13" value="true" class="mr-2" />
+          faster
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q13" value="false" class="mr-2" />
+          fast
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 14: Of all my friends, Jack is the ___.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q14" value="true" class="mr-2" />
+          most generous
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q14" value="false" class="mr-2" />
+          generousest
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q14" value="false" class="mr-2" />
+          more generous
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q14" value="false" class="mr-2" />
+          generouser
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 15: This problem is ___ than the last one.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q15" value="false" class="mr-2" />
+          complicateder
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q15" value="true" class="mr-2" />
+          more complicated
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q15" value="false" class="mr-2" />
+          most complicated
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q15" value="false" class="mr-2" />
+          complicatedest
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 16: Who is the ___ of the three?</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q16" value="false" class="mr-2" />
+          more old
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q16" value="false" class="mr-2" />
+          most old
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q16" value="false" class="mr-2" />
+          older
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q16" value="true" class="mr-2" />
+          oldest
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 17: That was the ___ speech I&#x27;ve ever heard.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q17" value="false" class="mr-2" />
+          inspirest
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q17" value="false" class="mr-2" />
+          inspiringest
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q17" value="true" class="mr-2" />
+          most inspiring
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q17" value="false" class="mr-2" />
+          more inspiring
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 18: He is ___ at chess than I expected.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q18" value="true" class="mr-2" />
+          better
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q18" value="false" class="mr-2" />
+          gooder
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q18" value="false" class="mr-2" />
+          more good
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q18" value="false" class="mr-2" />
+          best
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 19: This task is ___ than it looks.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q19" value="false" class="mr-2" />
+          difficultest
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q19" value="false" class="mr-2" />
+          difficulter
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q19" value="true" class="mr-2" />
+          more difficult
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q19" value="false" class="mr-2" />
+          most difficult
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 20: Among all the competitors, she sang the ___</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q20" value="false" class="mr-2" />
+          most good
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q20" value="false" class="mr-2" />
+          goodest
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q20" value="false" class="mr-2" />
+          better
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q20" value="true" class="mr-2" />
+          best
+        </label>
+        
+    </div>
+    
+      <div class="text-center mt-8">
+        <button type="button" onclick="checkAnswers()" class="bg-blue-800 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">
+          Submit Answers
+        </button>
+      </div>
+    </form>
+
+    <div id="result" class="text-center mt-8 text-2xl font-bold text-blue-800"></div>
+  </main>
+
+  <footer class="bg-blue-900 text-white py-6 mt-12">
+    <div class="container mx-auto px-6 text-center">
+      © 2025 Smart Learning System. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    function checkAnswers() {
+      const form = document.getElementById('quizForm');
+      const answers = form.querySelectorAll('input[type="radio"]:checked');
+      let score = 0;
+      answers.forEach(ans => {
+        if (ans.value === "true") score++;
+      });
+      const result = document.getElementById('result');
+      result.innerText = `You got ${score} out of 20 correct.`;
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+  </script>
+  <button onclick="window.history.back()"class="fixed top-4 left-4 text-white text-2xl hover:text-yellow-300 font-bold py-2 px-4 z-50 ">
+    ⇦
+  </button>
+</body>
+</html>

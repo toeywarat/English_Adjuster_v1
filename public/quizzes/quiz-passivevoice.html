@@ -1,0 +1,566 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Passive Voice Quiz</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/attempts-client.js"></script>
+  <script>const QUIZ_STARTED_AT = Date.now();</script>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+  <header class="bg-blue-900 text-white py-6 shadow">
+    <div class="container mx-auto flex justify-between items-center px-6">
+      <h1 class="text-2xl font-bold">English Adjuster</h1>
+      <nav>
+        <a href="../index.html" class="mr-4 hover:text-yellow-300">Home</a>
+        <a href="../lessons/lessons.html" class="mr-4 hover:text-yellow-300">Lessons</a>
+        <a href="quiz.html" class="hover:text-yellow-300">Quizzes</a>
+        <a href="../profile.html" class="text-3xl text-yellow-300">👤</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-6 py-12 flex-grow">
+    <section class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-blue-900 mb-4">Passive Voice Quiz</h2>
+      <p class="text-lg">เลือกคำตอบที่ถูกต้องเกี่ยวกับ Passive Voice (ทุกโครงสร้าง)</p>
+    </section>
+
+    <form id="quizForm">
+      
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 1: The letter ___ by the secretary.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q1" value="false" class="mr-2" />
+          typed
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q1" value="false" class="mr-2" />
+          has type
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q1" value="true" class="mr-2" />
+          was typed
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q1" value="false" class="mr-2" />
+          is typing
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 2: The house ___ being painted.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q2" value="false" class="mr-2" />
+          will
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q2" value="true" class="mr-2" />
+          is
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q2" value="false" class="mr-2" />
+          has
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q2" value="false" class="mr-2" />
+          was
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 3: The room ___ every day.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q3" value="false" class="mr-2" />
+          cleaned
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q3" value="false" class="mr-2" />
+          was cleaning
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q3" value="false" class="mr-2" />
+          cleans
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q3" value="true" class="mr-2" />
+          is cleaned
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 4: The meeting ___ off due to the storm.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q4" value="false" class="mr-2" />
+          calls
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q4" value="true" class="mr-2" />
+          was called
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q4" value="false" class="mr-2" />
+          is calling
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q4" value="false" class="mr-2" />
+          was call
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 5: The dog ___ after by its owner.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q5" value="false" class="mr-2" />
+          is looked after
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q5" value="false" class="mr-2" />
+          was look
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q5" value="false" class="mr-2" />
+          looked
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q5" value="true" class="mr-2" />
+          is looked
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 6: The kids ___ care of by the staff.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q6" value="true" class="mr-2" />
+          were taken
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q6" value="false" class="mr-2" />
+          are take
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q6" value="false" class="mr-2" />
+          taken
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q6" value="false" class="mr-2" />
+          was took
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 7: She hates ___ ignored.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q7" value="false" class="mr-2" />
+          be
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q7" value="true" class="mr-2" />
+          being
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q7" value="false" class="mr-2" />
+          is
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q7" value="false" class="mr-2" />
+          to be
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 8: A new rule ___ announced today.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q8" value="true" class="mr-2" />
+          was
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q8" value="false" class="mr-2" />
+          being
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q8" value="false" class="mr-2" />
+          is
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q8" value="false" class="mr-2" />
+          has
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 9: This book is to ___ read by students.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q9" value="true" class="mr-2" />
+          be
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q9" value="false" class="mr-2" />
+          been
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q9" value="false" class="mr-2" />
+          is
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q9" value="false" class="mr-2" />
+          being
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 10: He wants ___ recognized.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q10" value="false" class="mr-2" />
+          is
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q10" value="false" class="mr-2" />
+          being
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q10" value="false" class="mr-2" />
+          was
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q10" value="true" class="mr-2" />
+          to be
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 11: He apologized for ___ treated unfairly.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q11" value="false" class="mr-2" />
+          been
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q11" value="true" class="mr-2" />
+          being
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q11" value="false" class="mr-2" />
+          be
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q11" value="false" class="mr-2" />
+          to be
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 12: The cake ___ by the children.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q12" value="false" class="mr-2" />
+          eaten
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q12" value="false" class="mr-2" />
+          is eat
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q12" value="false" class="mr-2" />
+          ate
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q12" value="true" class="mr-2" />
+          was eaten
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 13: The house ___ being renovated.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q13" value="false" class="mr-2" />
+          be
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q13" value="true" class="mr-2" />
+          is
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q13" value="false" class="mr-2" />
+          has
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q13" value="false" class="mr-2" />
+          was
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 14: They need ___ informed of the changes.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q14" value="false" class="mr-2" />
+          is
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q14" value="true" class="mr-2" />
+          to be
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q14" value="false" class="mr-2" />
+          being
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q14" value="false" class="mr-2" />
+          are
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 15: The event was ___ off at the last minute.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q15" value="false" class="mr-2" />
+          call
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q15" value="false" class="mr-2" />
+          calling
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q15" value="true" class="mr-2" />
+          called
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q15" value="false" class="mr-2" />
+          calls
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 16: The baby ___ after by her grandma.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q16" value="true" class="mr-2" />
+          is looked
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q16" value="false" class="mr-2" />
+          is looking
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q16" value="false" class="mr-2" />
+          is looked after
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q16" value="false" class="mr-2" />
+          was look
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 17: The house is being ___ by professional cleaners.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q17" value="true" class="mr-2" />
+          cleaned
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q17" value="false" class="mr-2" />
+          clean
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q17" value="false" class="mr-2" />
+          was clean
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q17" value="false" class="mr-2" />
+          cleaning
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 18: She is used to ___ treated with respect.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q18" value="false" class="mr-2" />
+          be
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q18" value="true" class="mr-2" />
+          being
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q18" value="false" class="mr-2" />
+          to be
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q18" value="false" class="mr-2" />
+          is
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 19: The documents need ___ signed immediately.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q19" value="true" class="mr-2" />
+          to be
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q19" value="false" class="mr-2" />
+          is
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q19" value="false" class="mr-2" />
+          being
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q19" value="false" class="mr-2" />
+          be
+        </label>
+        
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Question 20: A new policy is expected ___ introduced.</h3>
+      
+        <label class="block mb-2">
+          <input type="radio" name="q20" value="true" class="mr-2" />
+          to be
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q20" value="false" class="mr-2" />
+          is
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q20" value="false" class="mr-2" />
+          been
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q20" value="false" class="mr-2" />
+          being
+        </label>
+        
+    </div>
+    
+      <div class="text-center mt-8">
+        <button type="button" onclick="checkAnswers()" class="bg-blue-800 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">
+          Submit Answers
+        </button>
+      </div>
+    </form>
+
+    <div id="result" class="text-center mt-8 text-2xl font-bold text-blue-800"></div>
+  </main>
+
+  <footer class="bg-blue-900 text-white py-6 mt-12">
+    <div class="container mx-auto px-6 text-center">
+      © 2025 Smart Learning System. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    function checkAnswers() {
+      const form = document.getElementById('quizForm');
+      const answers = form.querySelectorAll('input[type="radio"]:checked');
+      let score = 0;
+      answers.forEach(ans => {
+        if (ans.value === "true") score++;
+      });
+      const result = document.getElementById('result');
+      result.innerText = `You got ${score} out of 20 correct.`;
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+  </script>
+  <button onclick="window.history.back()"class="fixed top-4 left-4 text-white text-2xl hover:text-yellow-300 font-bold py-2 px-4 z-50 ">
+    ⇦
+  </button>
+</body>
+</html>
