@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quizzes - M.4</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/attempts-client.js"></script>
+  <script>const QUIZ_STARTED_AT = Date.now();</script>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="bg-blue-900 text-white py-6 shadow">
+    <div class="container mx-auto flex justify-between items-center px-6">
+      <h1 class="text-2xl font-bold">English Adjuster</h1>
+      <nav>
+        <a href="../index.html" class="mr-4 hover:text-yellow-300">Home</a>
+        <a href="../lessons/lessons.html" class="mr-4 hover:text-yellow-300">Lessons</a>
+        <a href="quiz.html" class=" hover:text-yellow-300">Quizzes</a>
+        <a href="../profile.html" class="text-3xl text-yellow-300">👤</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="container mx-auto px-6 py-12 flex-grow">
+    <section class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-blue-900 mb-4">Choose Your M.4 Quizzes</h2>
+      <p class="text-lg text-gray-700">Choose a topic below and take a quiz to check your understanding of key grammar points.</p>
+    </section>
+
+    <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+        <h3 class="text-xl font-bold text-blue-800 mb-2">Tenses</h3>
+        <p class="mb-4">Test your understanding of English verb tenses! Practice present, past, and future forms to improve your grammar accuracy and sentence flow.</p>
+        <a href="quiz-tenseskkk.html" class="inline-block bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800">Start</a>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+        <h3 class="text-xl font-bold text-blue-800 mb-2">Comparison</h3>
+        <p class="mb-4">Challenge yourself with comparisons! Review comparative and superlative adjectives and adverbs to describe differences and similarities correctly.</p>
+        <a href="quiz-comparison.html" class="inline-block bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800">Start</a>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+        <h3 class="text-xl font-bold text-blue-800 mb-2">Connectors</h3>
+        <p class="mb-4">Master the use of linking words like and, but, because, however, and more. This quiz helps you build clearer and more logical sentences.</p>
+        <a href="quiz-connectors.html" class="inline-block bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800">Start</a>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+        <h3 class="text-xl font-bold text-blue-800 mb-2">Reflexive & Reciprocal Pronouns</h3>
+        <p class="mb-4">Can you use myself, yourself, each other correctly? Test your knowledge of reflexive and reciprocal pronouns in everyday English.</p>
+        <a href="quiz-pronouns.html" class="inline-block bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800">Start</a>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+        <h3 class="text-xl font-bold text-blue-800 mb-2">Conditional Clause</h3>
+        <p class="mb-4">Explore if-clauses and how they affect meaning. This quiz helps you understand real and unreal situations using conditional sentences.</p>
+        <a href="quiz-conditionals.html" class="inline-block bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800">Start</a>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+        <h3 class="text-xl font-bold text-blue-800 mb-2">Reported Speech</h3>
+        <p class="mb-4">Practice changing direct speech to reported speech. This quiz will help you learn how to report conversations accurately and clearly.</p>
+        <a href="quiz-reportedspeechkkk.html" class="inline-block bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800">Start</a>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+        <h3 class="text-xl font-bold text-blue-800 mb-2">Possibility</h3>
+        <p class="mb-4">Learn how to express possibility using might, may, could, and more. This quiz will test your ability to talk about uncertain situations.</p>
+        <a href="quiz-possibility.html" class="inline-block bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800">Start</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white text-center py-4">
+    <p>&copy; 2025 Smart Learning System. All rights reserved.</p>
+  </footer>
+  <button onclick="window.history.back()"class="fixed top-4 left-4 text-white text-2xl hover:text-yellow-300 font-bold py-2 px-4 z-50 ">
+    ⇦
+  </button>
+
+<script>
+  async function checkAnswers() {
+    const form = document.getElementById('quizForm') || document.querySelector('form');
+    const answers = form ? form.querySelectorAll('input[type="radio"]:checked') : [];
+    const total = (form ? form.querySelectorAll('.bg-white.p-6.rounded-lg.shadow').length : 0) || (form ? form.querySelectorAll('h3').length : 0) || answers.length || 20;
+    let score = 0;
+    answers.forEach(ans => { if (ans.value === "true") score++; });
+    const result = document.getElementById('result');
+    if (result) result.innerText = `You got ${score} out of ${total} correct.`;
+
+    try {
+      const items = window.__attemptsClient ? window.__attemptsClient.buildItemsFromForm(form) : [];
+      await (window.__attemptsClient ? window.__attemptsClient.saveAttempt({
+        topic: document.title || "Quizzes - M.4",
+        quizType: "topic",
+        score,
+        total: items.length || total,
+        durationSec: Math.floor((Date.now() - (window.QUIZ_STARTED_AT || Date.now())) / 1000),
+        startedAt: new Date(window.QUIZ_STARTED_AT || Date.now()).toISOString(),
+        items
+      }) : Promise.resolve());
+      console.log("Attempt saved!");
+    } catch (e) {
+      console.error("Failed to save attempt:", e);
+    }
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>

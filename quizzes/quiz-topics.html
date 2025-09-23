@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Topics - Smart Learning System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/attempts-client.js"></script>
+  <script>const QUIZ_STARTED_AT = Date.now();</script>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="bg-blue-900 text-white py-6 shadow">
+    <div class="container mx-auto flex justify-between items-center px-6">
+      <h1 class="text-2xl font-bold">English Adjuster</h1>
+      <nav>
+        <a href="../index.html" class="mr-4 hover:text-yellow-300">Home</a>
+        <a href="../lessons/lessons.html" class="mr-4 hover:text-yellow-300">Lessons</a>
+        <a href="quiz.html" class=" hover:text-yellow-300">Quizzes</a>
+        <a href="../profile.html" class="text-3xl text-yellow-300">👤</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="container mx-auto px-6 py-12 flex-grow">
+    <section class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-blue-900 mb-4">Choose Your Grade Level</h2>
+      <p class="text-lg text-gray-700">Let's test your English skills.</p>
+    </section>
+
+    <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+        <h3 class="text-xl font-bold text-blue-800 mb-2">Matthayom 4 (Grade 10)</h3>
+        <a href="quiz-m4.html" class="inline-block bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800">start quiz</a>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+        <h3 class="text-xl font-bold text-blue-800 mb-2">Matthayom 5 (Grade 11)</h3>
+        <a href="quiz-m5.html" class="inline-block bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800">Start quiz</a>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+        <h3 class="text-xl font-bold text-blue-800 mb-2">Matthayom 6 (Grade 12)</h3>
+        <a href="quiz-m6.html" class="inline-block bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800">Start quiz</a>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white text-center py-4">
+    <p>&copy; 2025 Smart Learning System. All rights reserved.</p>
+  </footer>
+  <button onclick="window.history.back()"class="fixed top-4 left-4 text-white text-2xl hover:text-yellow-300 font-bold py-2 px-4 z-50 ">
+    ⇦
+  </button>
+
+<script>
+  async function checkAnswers() {
+    const form = document.getElementById('quizForm') || document.querySelector('form');
+    const answers = form ? form.querySelectorAll('input[type="radio"]:checked') : [];
+    const total = (form ? form.querySelectorAll('.bg-white.p-6.rounded-lg.shadow').length : 0) || (form ? form.querySelectorAll('h3').length : 0) || answers.length || 20;
+    let score = 0;
+    answers.forEach(ans => { if (ans.value === "true") score++; });
+    const result = document.getElementById('result');
+    if (result) result.innerText = `You got ${score} out of ${total} correct.`;
+
+    try {
+      const items = window.__attemptsClient ? window.__attemptsClient.buildItemsFromForm(form) : [];
+      await (window.__attemptsClient ? window.__attemptsClient.saveAttempt({
+        topic: document.title || "Quiz Topics - Smart Learning System",
+        quizType: "topic",
+        score,
+        total: items.length || total,
+        durationSec: Math.floor((Date.now() - (window.QUIZ_STARTED_AT || Date.now())) / 1000),
+        startedAt: new Date(window.QUIZ_STARTED_AT || Date.now()).toISOString(),
+        items
+      }) : Promise.resolve());
+      console.log("Attempt saved!");
+    } catch (e) {
+      console.error("Failed to save attempt:", e);
+    }
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>

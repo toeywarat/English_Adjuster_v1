@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pretest - English Adjuster</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-blue-900 text-white py-6 shadow">
+    <div class="container mx-auto flex justify-between items-center px-6">
+      <h1 class="text-2xl font-bold">English Adjuster</h1>
+      <nav>
+        <a href="../index.html" class="mr-4 hover:text-yellow-300">Home</a>
+        <a href="../lessons/lessons.html" class="mr-4 hover:text-yellow-300">Lessons</a>
+        <a href="../quizzes/quiz.html" class="hover:text-yellow-300">Quizzes</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="flex-grow container mx-auto px-6 py-12">
+    <h2 class="text-3xl font-bold text-blue-900 text-center mb-8">Pretest: English Skills Assessment</h2>
+
+    <form id="pretest-form" class="space-y-8 max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md">
+      <!-- 🟢 Easy -->
+      <div>
+        <p class="font-semibold">1. She ___ to school every day.</p>
+        <label class="block"><input type="radio" name="q1" value="a" required> go</label>
+        <label class="block"><input type="radio" name="q1" value="b"> goes</label>
+        <label class="block"><input type="radio" name="q1" value="c"> going</label>
+        <label class="block"><input type="radio" name="q1" value="d"> gone</label>
+      </div>
+
+      <div>
+        <p class="font-semibold">2. I ___ a new book yesterday.</p>
+        <label class="block"><input type="radio" name="q2" value="a" required> buy</label>
+        <label class="block"><input type="radio" name="q2" value="b"> buys</label>
+        <label class="block"><input type="radio" name="q2" value="c"> bought</label>
+        <label class="block"><input type="radio" name="q2" value="d"> buying</label>
+      </div>
+
+      <div>
+        <p class="font-semibold">3. They ___ playing football now.</p>
+        <label class="block"><input type="radio" name="q3" value="a" required> is</label>
+        <label class="block"><input type="radio" name="q3" value="b"> are</label>
+        <label class="block"><input type="radio" name="q3" value="c"> was</label>
+        <label class="block"><input type="radio" name="q3" value="d"> be</label>
+      </div>
+
+      <div>
+        <p class="font-semibold">4. He ___ coffee in the morning.</p>
+        <label class="block"><input type="radio" name="q4" value="a" required> drink</label>
+        <label class="block"><input type="radio" name="q4" value="b"> drinks</label>
+        <label class="block"><input type="radio" name="q4" value="c"> drinking</label>
+        <label class="block"><input type="radio" name="q4" value="d"> drank</label>
+      </div>
+
+      <div>
+        <p class="font-semibold">5. We ___ to the zoo last weekend.</p>
+        <label class="block"><input type="radio" name="q5" value="a" required> go</label>
+        <label class="block"><input type="radio" name="q5" value="b"> went</label>
+        <label class="block"><input type="radio" name="q5" value="c"> goes</label>
+        <label class="block"><input type="radio" name="q5" value="d"> gone</label>
+      </div>
+
+      <div>
+        <p class="font-semibold">6. My cat ___ black.</p>
+        <label class="block"><input type="radio" name="q6" value="a" required> is</label>
+        <label class="block"><input type="radio" name="q6" value="b"> are</label>
+        <label class="block"><input type="radio" name="q6" value="c"> were</label>
+        <label class="block"><input type="radio" name="q6" value="d"> be</label>
+      </div>
+
+      <div>
+        <p class="font-semibold">7. She ___ like pizza.</p>
+        <label class="block"><input type="radio" name="q7" value="a" required> don’t</label>
+        <label class="block"><input type="radio" name="q7" value="b"> isn’t</label>
+        <label class="block"><input type="radio" name="q7" value="c"> doesn’t</label>
+        <label class="block"><input type="radio" name="q7" value="d"> didn’t</label>
+      </div>
+
+      <div>
+        <p class="font-semibold">8. There ___ some books on the table.</p>
+        <label class="block"><input type="radio" name="q8" value="a" required> is</label>
+        <label class="block"><input type="radio" name="q8" value="b"> are</label>
+        <label class="block"><input type="radio" name="q8" value="c"> was</label>
+        <label class="block"><input type="radio" name="q8" value="d"> be</label>
+      </div>
+
+      <div>
+        <p class="font-semibold">9. I ___ TV when you called.</p>
+        <label class="block"><input type="radio" name="q9" value="a" required> watch</label>
+        <label class="block"><input type="radio" name="q9" value="b"> watching</label>
+        <label class="block"><input type="radio" name="q9" value="c"> was watching</label>
+        <label class="block"><input type="radio" name="q9" value="d"> watched</label>
+      </div>
+
+      <!-- 🟡 Medium -->
+      <div>
+        <p class="font-semibold">10. If it ___ tomorrow, we will cancel the trip.</p>
+        <label class="block"><input type="radio" name="q10" value="a" required> rained</label>
+        <label class="block"><input type="radio" name="q10" value="b"> rains</label>
+        <label class="block"><input type="radio" name="q10" value="c"> rain</label>
+        <label class="block"><input type="radio" name="q10" value="d"> raining</label>
+      </div>
+
+      <div>
+        <p class="font-semibold">11. By the time we arrived, the movie ___</p>
+        <label class="block"><input type="radio" name="q11" value="a" required> starts</label>
+        <label class="block"><input type="radio" name="q11" value="b"> had started</label>
+        <label class="block"><input type="radio" name="q11" value="c"> has started</label>
+        <label class="block"><input type="radio" name="q11" value="d"> will start</label>
+      </div>
+
+      <div>
+        <p class="font-semibold">12. Neither John nor his friends ___ coming to the party.</p>
+        <label class="block"><input type="radio" name="q12" value="a" required> is</label>
+        <label class="block"><input type="radio" name="q12" value="b"> are</label>
+        <label class="block"><input type="radio" name="q12" value="c"> was</label>
+        <label class="block"><input type="radio" name="q12" value="d"> has</label>
+      </div>
+
+      <div>
+        <p class="font-semibold">13. The cake ___ by my sister.</p>
+        <label class="block"><input type="radio" name="q13" value="a" required> made</label>
+        <label class="block"><input type="radio" name="q13" value="b"> was made</label>
+        <label class="block"><input type="radio" name="q13" value="c"> is make</label>
+        <label class="block"><input type="radio" name="q13" value="d"> makes</label>
+      </div>
+
+      <div>
+        <p class="font-semibold">14. She asked me ___ I liked coffee.</p>
+        <label class="block"><input type="radio" name="q14" value="a" required> when</label>
+        <label class="block"><input type="radio" name="q14" value="b"> that</label>
+        <label class="block"><input type="radio" name="q14" value="c"> if</label>
+        <label class="block"><input type="radio" name="q14" value="d"> what</label>
+      </div>
+
+      <!-- 🔴 Hard -->
+      <div>
+        <p class="font-semibold">15. Not only ___ late, but he also forgot his homework.</p>
+        <label class="block"><input type="radio" name="q15" value="a" required> he was</label>
+        <label class="block"><input type="radio" name="q15" value="b"> was he</label>
+        <label class="block"><input type="radio" name="q15" value="c"> he is</label>
+        <label class="block"><input type="radio" name="q15" value="d"> is he</label>
+      </div>
+
+      <div>
+        <p class="font-semibold">16. I wish I ___ more time to finish this project.</p>
+        <label class="block"><input type="radio" name="q16" value="a" required> have</label>
+        <label class="block"><input type="radio" name="q16" value="b"> had</label>
+        <label class="block"><input type="radio" name="q16" value="c"> will have</label>
+        <label class="block"><input type="radio" name="q16" value="d"> has</label>
+      </div>
+
+      <div>
+        <p class="font-semibold">17. Had I known about the traffic, I ___ earlier.</p>
+        <label class="block"><input type="radio" name="q17" value="a" required> would leave</label>
+        <label class="block"><input type="radio" name="q17" value="b"> will leave</label>
+        <label class="block"><input type="radio" name="q17" value="c"> would have left</label>
+        <label class="block"><input type="radio" name="q17" value="d"> left</label>
+      </div>
+
+      <div>
+        <p class="font-semibold">18. Hardly ___ the bell ring when the students ran out.</p>
+        <label class="block"><input type="radio" name="q18" value="a" required> had</label>
+        <label class="block"><input type="radio" name="q18" value="b"> has</label>
+        <label class="block"><input type="radio" name="q18" value="c"> did</label>
+        <label class="block"><input type="radio" name="q18" value="d"> does</label>
+      </div>
+
+      <button type="submit" class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg font-bold">
+        Submit
+      </button>
+      <p id="result" class="mt-4 text-center font-semibold text-blue-700"></p>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white text-center py-4 mt-8">
+    <p>&copy; 2025 Smart Learning System. All rights reserved.</p>
+  </footer>
+
+<script>
+  document.getElementById("pretest-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const correctAnswers = {
+      q1: "b", q2: "c", q3: "b", q4: "b", q5: "b", q6: "a",
+      q7: "c", q8: "b", q9: "c", q10: "b", q11: "b", q12: "b",
+      q13: "b", q14: "c", q15: "b", q16: "b", q17: "c", q18: "a"
+    };
+
+    let score = 0, answered = 0;
+    for (let key in correctAnswers) {
+      const selected = document.querySelector(`input[name="${key}"]:checked`);
+      if (selected) {
+        answered++;
+        if (selected.value.trim().toLowerCase() === correctAnswers[key]) score++;
+      }
+    }
+
+    if (answered < Object.keys(correctAnswers).length) {
+      alert("กรุณาตอบให้ครบทั้ง 18 ข้อก่อนส่งแบบทดสอบ");
+      return;
+    }
+
+    sessionStorage.setItem("grammarScore", score);
+    window.location.href = "pretest-vocab.html";
+  });
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Idioms in Conversation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/attempts-client.js"></script>
+  <script>const QUIZ_STARTED_AT = Date.now();</script>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="bg-blue-900 text-white py-6 shadow">
+    <div class="container mx-auto flex justify-between items-center px-6">
+      <h1 class="text-2xl font-bold">English Adjuster</h1>
+      <nav>
+        <a href="../index.html" class="mr-4 hover:text-yellow-300">Home</a>
+        <a href="../lessons/lessons.html" class="mr-4 hover:text-yellow-300">Lessons</a>
+        <a href="quiz.html" class="mr-4 hover:text-yellow-300">Quizzes</a>
+        <a href="../profile.html" class="text-3xl text-yellow-300">👤</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="container mx-auto px-6 py-12 flex-grow">
+    <section class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-blue-900 mb-4">Idioms in Conversation</h2>
+      <p class="text-lg text-gray-700">Select the correct meaning of each idiom based on its usage.</p>
+    </section>
+
+    <form id="quizForm" class="space-y-8">
+      <!-- Questions will be inserted here by JS -->
+    
+      <div class="text-center mt-8">
+        <button type="button" onclick="checkAnswers()" class="bg-blue-800 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">
+          Submit Answers
+        </button>
+      </div>
+</form>
+    <div id="result" class="text-center mt-8 text-2xl font-bold text-blue-800"></div>
+
+
+    <div class="text-center mt-8">
+      <button onclick="submitQuiz()" class="bg-blue-700 text-white px-6 py-3 rounded hover:bg-blue-800 text-lg font-semibold">Submit</button>
+      <p id="score" class="mt-4 text-2xl font-bold text-green-700"></p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white text-center py-4">
+    <p>&copy; 2025 Smart Learning System. All rights reserved.</p>
+  </footer>
+
+  <!-- Back Button -->
+  <button onclick="window.history.back()" class="fixed top-4 left-4 text-white text-2xl hover:text-yellow-300 font-bold py-2 px-4 z-50">
+    ⇦
+  </button>
+
+  <script>
+    const questions = [
+      // ⭐ Common Idioms
+      {
+        question: "He told a joke to break the ice.",
+        choices: ["To start a conversation and ease tension", "To criticize someone", "To ruin a moment", "To get angry suddenly"],
+        correctAnswer: 0
+      },
+      {
+        question: "I'm hitting the sack. Goodnight!",
+        choices: ["Going to sleep", "Going to fight", "Packing a bag", "Doing exercise"],
+        correctAnswer: 0
+      },
+      {
+        question: "That exam was a piece of cake.",
+        choices: ["Very easy", "Very confusing", "Delicious", "Completely unfair"],
+        correctAnswer: 0
+      },
+      {
+        question: "That bag cost me an arm and a leg!",
+        choices: ["Very expensive", "A good deal", "Cheap", "Emotionally painful"],
+        correctAnswer: 0
+      },
+      {
+        question: "I’m staying home today because I feel under the weather.",
+        choices: ["Not feeling well", "Excited", "Angry", "Relaxed"],
+        correctAnswer: 0
+      },
+
+      // 🎨 Color Idioms
+      {
+        question: "He’s feeling blue after the breakup.",
+        choices: ["Sad", "Calm", "Jealous", "Energetic"],
+        correctAnswer: 0
+      },
+      {
+        question: "She's green with envy about your vacation.",
+        choices: ["Jealous", "Sick", "Hopeful", "Happy for you"],
+        correctAnswer: 0
+      },
+      {
+        question: "He told a little white lie to avoid hurting her feelings.",
+        choices: ["A harmless lie", "A serious lie", "An obvious lie", "A confusing statement"],
+        correctAnswer: 0
+      },
+      {
+        question: "Getting a visa involved too much red tape.",
+        choices: ["Bureaucratic procedures", "Legal trouble", "Expensive fees", "Security checks"],
+        correctAnswer: 0
+      },
+      {
+        question: "After the crisis, the company was in the red.",
+        choices: ["Losing money", "Growing fast", "In trouble with the law", "Highly successful"],
+        correctAnswer: 0
+      },
+
+      // 🍽️ Food Idioms
+      {
+        question: "He spilled the beans about the surprise party.",
+        choices: ["Revealed a secret", "Made a mess", "Ruined the food", "Started the party early"],
+        correctAnswer: 0
+      },
+      {
+        question: "She’s as cool as a cucumber under pressure.",
+        choices: ["Very calm", "Unfriendly", "Inexperienced", "Very cold"],
+        correctAnswer: 0
+      },
+      {
+        question: "He’s the bread and butter of the family.",
+        choices: ["Main source of income", "Most loved person", "Biggest eater", "Youngest sibling"],
+        correctAnswer: 0
+      },
+      {
+        question: "You always butter up the teacher before exams.",
+        choices: ["Flatter to gain favor", "Complain about grades", "Bring food", "Study quietly"],
+        correctAnswer: 0
+      },
+      {
+        question: "She’s in a pickle with two deadlines this week.",
+        choices: ["In a difficult situation", "Eating a lot", "Feeling confused", "Excited and busy"],
+        correctAnswer: 0
+      },
+
+      // HARD mixed
+      {
+        question: "He’s the big cheese in the company.",
+        choices: ["A very important person", "A new employee", "Someone with bad ideas", "The accountant"],
+        correctAnswer: 0
+      },
+      {
+        question: "This job is a gravy train — easy money!",
+        choices: ["A job with high pay and little effort", "A job at a restaurant", "A train delivery job", "A risky job"],
+        correctAnswer: 0
+      },
+      {
+        question: "I only see her once in a blue moon.",
+        choices: ["Very rarely", "All the time", "Every week", "On special occasions"],
+        correctAnswer: 0
+      },
+      {
+        question: "His call came out of the blue.",
+        choices: ["Completely unexpected", "From another city", "Late at night", "Emotionally intense"],
+        correctAnswer: 0
+      },
+      {
+        question: "When she got insulted, she saw red.",
+        choices: ["Got very angry", "Started crying", "Ignored it", "Blushed with shame"],
+        correctAnswer: 0
+      }
+    ];
+
+    function submitQuiz() {
+      const form = document.getElementById("quizForm");
+      let score = 0;
+      questions.forEach((q, index) => {
+        const selected = form.querySelector(`input[name="q${index}"]:checked`);
+        if (selected && parseInt(selected.value) === q.correctAnswer) {
+          score++;
+        }
+      });
+      document.getElementById("score").innerText = `Your score: ${score} / ${questions.length}`;
+    }
+
+    // Render questions
+    const form = document.getElementById("quizForm");
+    questions.forEach((q, index) => {
+      const block = document.createElement("div");
+      block.innerHTML = `
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-lg font-semibold mb-4">Q${index + 1}. ${q.question}</h3>
+          ${q.choices.map((choice, i) => `
+            <label class="block mb-2">
+              <input type="radio" name="q${index}" value="${i}" class="mr-2">
+              ${choice}
+            </label>
+          `).join('')}
+        </div>
+      `;
+      form.appendChild(block);
+    });
+  </script>
+
+<script>
+  async function checkAnswers() {
+    const form = document.getElementById('quizForm') || document.querySelector('form');
+    const answers = form ? form.querySelectorAll('input[type="radio"]:checked') : [];
+    const total = (form ? form.querySelectorAll('.bg-white.p-6.rounded-lg.shadow').length : 0) || (form ? form.querySelectorAll('h3').length : 0) || answers.length || 20;
+    let score = 0;
+    answers.forEach(ans => { if (ans.value === "true") score++; });
+    const result = document.getElementById('result');
+    if (result) result.innerText = `You got ${score} out of ${total} correct.`;
+
+    try {
+      const items = window.__attemptsClient ? window.__attemptsClient.buildItemsFromForm(form) : [];
+      await (window.__attemptsClient ? window.__attemptsClient.saveAttempt({
+        topic: document.title || "Idioms in Conversation",
+        quizType: "topic",
+        score,
+        total: items.length || total,
+        durationSec: Math.floor((Date.now() - (window.QUIZ_STARTED_AT || Date.now())) / 1000),
+        startedAt: new Date(window.QUIZ_STARTED_AT || Date.now()).toISOString(),
+        items
+      }) : Promise.resolve());
+      console.log("Attempt saved!");
+    } catch (e) {
+      console.error("Failed to save attempt:", e);
+    }
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>

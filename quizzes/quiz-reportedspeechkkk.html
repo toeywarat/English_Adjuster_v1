@@ -1,0 +1,499 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reported Speech Quiz</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/attempts-client.js"></script>
+  <script>const QUIZ_STARTED_AT = Date.now();</script>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="bg-blue-900 text-white py-6 shadow">
+    <div class="container mx-auto flex justify-between items-center px-6">
+      <h1 class="text-2xl font-bold">English Adjuster</h1>
+      <nav>
+        <a href="../index.html" class="mr-4 hover:text-yellow-300">Home</a>
+        <a href="../lessons/lessons.html" class="mr-4 hover:text-yellow-300">Lessons</a>
+        <a href="quiz.html" class="hover:text-yellow-300">Quizzes</a>
+        <a href="../profile.html" class="text-3xl text-yellow-300">👤</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="container mx-auto px-6 py-12 flex-grow">
+    <section class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-blue-900 mb-4">Reported Speech Quiz</h2>
+      <p class="text-lg text-gray-700">Choose the correct reported speech for each direct sentence below.</p>
+    </section>
+
+    <form id="quizForm" class="space-y-8">
+<div class="bg-white p-6 rounded shadow"><p class="font-semibold mb-4">ข้อ 1: “I am tired,” she said.</p>
+        <label class="block mb-2">
+          <input type="radio" name="q1" value="A" data-correct="" class="mr-2" />
+          A) She said that she is tired.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q1" value="B" data-correct="B" class="mr-2" />
+          B) She said that she was tired.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q1" value="C" data-correct="" class="mr-2" />
+          C) She said that she had been tired.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q1" value="D" data-correct="" class="mr-2" />
+          D) She said that she will be tired.
+        </label>
+        </div><div class="bg-white p-6 rounded shadow"><p class="font-semibold mb-4">ข้อ 2: “We watched a movie,” they said.</p>
+        <label class="block mb-2">
+          <input type="radio" name="q2" value="A" data-correct="" class="mr-2" />
+          A) They said they watch a movie.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q2" value="B" data-correct="B" class="mr-2" />
+          B) They said they had watched a movie.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q2" value="C" data-correct="" class="mr-2" />
+          C) They said they are watching a movie.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q2" value="D" data-correct="" class="mr-2" />
+          D) They said they were watching a movie.
+        </label>
+        </div><div class="bg-white p-6 rounded shadow"><p class="font-semibold mb-4">ข้อ 3: “I will help you,” he told me.</p>
+        <label class="block mb-2">
+          <input type="radio" name="q3" value="A" data-correct="A" class="mr-2" />
+          A) He told me that he would help me.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q3" value="B" data-correct="" class="mr-2" />
+          B) He told me that he helps me.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q3" value="C" data-correct="" class="mr-2" />
+          C) He told me that he will help me.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q3" value="D" data-correct="" class="mr-2" />
+          D) He told me that he is helping me.
+        </label>
+        </div><div class="bg-white p-6 rounded shadow"><p class="font-semibold mb-4">ข้อ 4: “I can swim,” she said.</p>
+        <label class="block mb-2">
+          <input type="radio" name="q4" value="A" data-correct="" class="mr-2" />
+          A) She said that she will swim.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q4" value="B" data-correct="B" class="mr-2" />
+          B) She said that she could swim.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q4" value="C" data-correct="" class="mr-2" />
+          C) She said that she can swim.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q4" value="D" data-correct="" class="mr-2" />
+          D) She said that she is swimming.
+        </label>
+        </div><div class="bg-white p-6 rounded shadow"><p class="font-semibold mb-4">ข้อ 5: “I am going to the market,” he said.</p>
+        <label class="block mb-2">
+          <input type="radio" name="q5" value="A" data-correct="A" class="mr-2" />
+          A) He said he was going to the market.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q5" value="B" data-correct="" class="mr-2" />
+          B) He said he is going to the market.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q5" value="C" data-correct="" class="mr-2" />
+          C) He said he will go to the market.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q5" value="D" data-correct="" class="mr-2" />
+          D) He said he had gone to the market.
+        </label>
+        </div><div class="bg-white p-6 rounded shadow"><p class="font-semibold mb-4">ข้อ 6: “We have finished our work,” they said.</p>
+        <label class="block mb-2">
+          <input type="radio" name="q6" value="A" data-correct="A" class="mr-2" />
+          A) They said they had finished their work.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q6" value="B" data-correct="" class="mr-2" />
+          B) They said they have finished their work.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q6" value="C" data-correct="" class="mr-2" />
+          C) They said they finished their work.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q6" value="D" data-correct="" class="mr-2" />
+          D) They said they would finish their work.
+        </label>
+        </div><div class="bg-white p-6 rounded shadow"><p class="font-semibold mb-4">ข้อ 7: “I was reading,” she said.</p>
+        <label class="block mb-2">
+          <input type="radio" name="q7" value="A" data-correct="" class="mr-2" />
+          A) She said she is reading.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q7" value="B" data-correct="" class="mr-2" />
+          B) She said she reads.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q7" value="C" data-correct="C" class="mr-2" />
+          C) She said she had been reading.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q7" value="D" data-correct="" class="mr-2" />
+          D) She said she had read.
+        </label>
+        </div><div class="bg-white p-6 rounded shadow"><p class="font-semibold mb-4">ข้อ 8: “I will call you,” he said.</p>
+        <label class="block mb-2">
+          <input type="radio" name="q8" value="A" data-correct="A" class="mr-2" />
+          A) He said he would call me.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q8" value="B" data-correct="" class="mr-2" />
+          B) He said he will call me.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q8" value="C" data-correct="" class="mr-2" />
+          C) He said he calls me.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q8" value="D" data-correct="" class="mr-2" />
+          D) He said he is calling me.
+        </label>
+        </div><div class="bg-white p-6 rounded shadow"><p class="font-semibold mb-4">ข้อ 9: “We are watching TV,” they said.</p>
+        <label class="block mb-2">
+          <input type="radio" name="q9" value="A" data-correct="" class="mr-2" />
+          A) They said they are watching TV.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q9" value="B" data-correct="" class="mr-2" />
+          B) They said they will watch TV.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q9" value="C" data-correct="C" class="mr-2" />
+          C) They said they were watching TV.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q9" value="D" data-correct="" class="mr-2" />
+          D) They said they had watched TV.
+        </label>
+        </div><div class="bg-white p-6 rounded shadow"><p class="font-semibold mb-4">ข้อ 10: “I had eaten lunch,” she said.</p>
+        <label class="block mb-2">
+          <input type="radio" name="q10" value="A" data-correct="" class="mr-2" />
+          A) She said she eats lunch.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q10" value="B" data-correct="B" class="mr-2" />
+          B) She said she had eaten lunch.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q10" value="C" data-correct="" class="mr-2" />
+          C) She said she has eaten lunch.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q10" value="D" data-correct="" class="mr-2" />
+          D) She said she ate lunch.
+        </label>
+        </div><div class="bg-white p-6 rounded shadow"><p class="font-semibold mb-4">ข้อ 11: “I may come,” he said.</p>
+        <label class="block mb-2">
+          <input type="radio" name="q11" value="A" data-correct="A" class="mr-2" />
+          A) He said he might come.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q11" value="B" data-correct="" class="mr-2" />
+          B) He said he comes.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q11" value="C" data-correct="" class="mr-2" />
+          C) He said he will come.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q11" value="D" data-correct="" class="mr-2" />
+          D) He said he is coming.
+        </label>
+        </div><div class="bg-white p-6 rounded shadow"><p class="font-semibold mb-4">ข้อ 12: “I have been working,” she said.</p>
+        <label class="block mb-2">
+          <input type="radio" name="q12" value="A" data-correct="" class="mr-2" />
+          A) She said she is working.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q12" value="B" data-correct="B" class="mr-2" />
+          B) She said she had been working.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q12" value="C" data-correct="" class="mr-2" />
+          C) She said she has been working.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q12" value="D" data-correct="" class="mr-2" />
+          D) She said she works.
+        </label>
+        </div><div class="bg-white p-6 rounded shadow"><p class="font-semibold mb-4">ข้อ 13: “I like ice cream,” he said.</p>
+        <label class="block mb-2">
+          <input type="radio" name="q13" value="A" data-correct="A" class="mr-2" />
+          A) He said he liked ice cream.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q13" value="B" data-correct="" class="mr-2" />
+          B) He said he likes ice cream.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q13" value="C" data-correct="" class="mr-2" />
+          C) He said he had liked ice cream.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q13" value="D" data-correct="" class="mr-2" />
+          D) He said he would like ice cream.
+        </label>
+        </div><div class="bg-white p-6 rounded shadow"><p class="font-semibold mb-4">ข้อ 14: “I must go now,” she said.</p>
+        <label class="block mb-2">
+          <input type="radio" name="q14" value="A" data-correct="A" class="mr-2" />
+          A) She said she had to go then.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q14" value="B" data-correct="" class="mr-2" />
+          B) She said she must go now.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q14" value="C" data-correct="" class="mr-2" />
+          C) She said she should go now.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q14" value="D" data-correct="" class="mr-2" />
+          D) She said she might go now.
+        </label>
+        </div><div class="bg-white p-6 rounded shadow"><p class="font-semibold mb-4">ข้อ 15: “I will be there,” he said.</p>
+        <label class="block mb-2">
+          <input type="radio" name="q15" value="A" data-correct="A" class="mr-2" />
+          A) He said he would be there.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q15" value="B" data-correct="" class="mr-2" />
+          B) He said he is there.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q15" value="C" data-correct="" class="mr-2" />
+          C) He said he was there.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q15" value="D" data-correct="" class="mr-2" />
+          D) He said he will be there.
+        </label>
+        </div><div class="bg-white p-6 rounded shadow"><p class="font-semibold mb-4">ข้อ 16: “We went shopping,” they said.</p>
+        <label class="block mb-2">
+          <input type="radio" name="q16" value="A" data-correct="A" class="mr-2" />
+          A) They said they had gone shopping.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q16" value="B" data-correct="" class="mr-2" />
+          B) They said they go shopping.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q16" value="C" data-correct="" class="mr-2" />
+          C) They said they were going shopping.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q16" value="D" data-correct="" class="mr-2" />
+          D) They said they have gone shopping.
+        </label>
+        </div><div class="bg-white p-6 rounded shadow"><p class="font-semibold mb-4">ข้อ 17: “She is sleeping,” he said.</p>
+        <label class="block mb-2">
+          <input type="radio" name="q17" value="A" data-correct="" class="mr-2" />
+          A) He said she is sleeping.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q17" value="B" data-correct="" class="mr-2" />
+          B) He said she sleeps.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q17" value="C" data-correct="C" class="mr-2" />
+          C) He said she was sleeping.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q17" value="D" data-correct="" class="mr-2" />
+          D) He said she had slept.
+        </label>
+        </div><div class="bg-white p-6 rounded shadow"><p class="font-semibold mb-4">ข้อ 18: “I could run fast,” she said.</p>
+        <label class="block mb-2">
+          <input type="radio" name="q18" value="A" data-correct="A" class="mr-2" />
+          A) She said she could run fast.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q18" value="B" data-correct="" class="mr-2" />
+          B) She said she can run fast.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q18" value="C" data-correct="" class="mr-2" />
+          C) She said she runs fast.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q18" value="D" data-correct="" class="mr-2" />
+          D) She said she is running fast.
+        </label>
+        </div><div class="bg-white p-6 rounded shadow"><p class="font-semibold mb-4">ข้อ 19: “We are happy,” they said.</p>
+        <label class="block mb-2">
+          <input type="radio" name="q19" value="A" data-correct="" class="mr-2" />
+          A) They said they are happy.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q19" value="B" data-correct="" class="mr-2" />
+          B) They said they had been happy.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q19" value="C" data-correct="C" class="mr-2" />
+          C) They said they were happy.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q19" value="D" data-correct="" class="mr-2" />
+          D) They said they will be happy.
+        </label>
+        </div><div class="bg-white p-6 rounded shadow"><p class="font-semibold mb-4">ข้อ 20: “I need help,” he said.</p>
+        <label class="block mb-2">
+          <input type="radio" name="q20" value="A" data-correct="A" class="mr-2" />
+          A) He said he needed help.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q20" value="B" data-correct="" class="mr-2" />
+          B) He said he needs help.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q20" value="C" data-correct="" class="mr-2" />
+          C) He said he had needed help.
+        </label>
+        
+        <label class="block mb-2">
+          <input type="radio" name="q20" value="D" data-correct="" class="mr-2" />
+          D) He said he will need help.
+        </label>
+        </div>
+      <div class="text-center mt-8">
+        <button type="button" onclick="submitQuiz()" class="bg-blue-800 text-white px-6 py-3 rounded shadow hover:bg-blue-700 transition">Submit</button>
+      </div>
+      <div id="result" class="text-center mt-6 text-xl font-semibold text-green-700"></div>
+    
+      <div class="text-center mt-8">
+        <button type="button" onclick="checkAnswers()" class="bg-blue-800 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">
+          Submit Answers
+        </button>
+      </div>
+</form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white text-center py-4">
+    <p>&copy; 2025 Smart Learning System. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function submitQuiz() {
+      const form = document.getElementById('quizForm');
+      const answers = form.querySelectorAll('input[type="radio"]:checked');
+      let score = 0;
+      answers.forEach(ans => {
+        if (ans.dataset.correct && ans.value === ans.dataset.correct) {
+          score++;
+        }
+      });
+      document.getElementById('result').textContent = `You got ${score} out of 20 correct.`;
+    }
+  </script>
+  <button onclick="window.history.back()"class="fixed top-4 left-4 text-white text-2xl hover:text-yellow-300 font-bold py-2 px-4 z-50 ">
+    ⇦
+  </button>
+
+<script>
+  async function checkAnswers() {
+    const form = document.getElementById('quizForm') || document.querySelector('form');
+    const answers = form ? form.querySelectorAll('input[type="radio"]:checked') : [];
+    const total = (form ? form.querySelectorAll('.bg-white.p-6.rounded-lg.shadow').length : 0) || (form ? form.querySelectorAll('h3').length : 0) || answers.length || 20;
+    let score = 0;
+    answers.forEach(ans => { if (ans.value === "true") score++; });
+    const result = document.getElementById('result');
+    if (result) result.innerText = `You got ${score} out of ${total} correct.`;
+
+    try {
+      const items = window.__attemptsClient ? window.__attemptsClient.buildItemsFromForm(form) : [];
+      await (window.__attemptsClient ? window.__attemptsClient.saveAttempt({
+        topic: document.title || "Reported Speech Quiz",
+        quizType: "topic",
+        score,
+        total: items.length || total,
+        durationSec: Math.floor((Date.now() - (window.QUIZ_STARTED_AT || Date.now())) / 1000),
+        startedAt: new Date(window.QUIZ_STARTED_AT || Date.now()).toISOString(),
+        items
+      }) : Promise.resolve());
+      console.log("Attempt saved!");
+    } catch (e) {
+      console.error("Failed to save attempt:", e);
+    }
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>

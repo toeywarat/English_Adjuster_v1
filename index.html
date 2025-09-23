@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Learning System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="bg-blue-900 text-white py-6 shadow">
+    <div class="container mx-auto flex justify-between items-center px-6">
+      <h1 class="text-2xl font-bold">English Adjuster</h1>
+      <nav class="space-x-4">
+        <a href="index.html" class="hover:text-yellow-300">Home</a>
+        <a href="lessons/lessons.html" class="hover:text-yellow-300">Lessons</a>
+        <a href="quizzes/quiz.html" class="hover:text-yellow-300">Quizzes</a>
+        <a href="profile.html" class="text-3xl text-yellow-300">👤</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-6 py-12 flex-grow">
+    <section class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-blue-900 mb-4">Master Your English with AI</h2>
+      <p class="text-lg text-gray-700">
+        Your smart assistant for grammar practice, quizzes, progress tracking, and AI-based weakness detection.
+      </p>
+    </section>
+
+    <section class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+        <h3 class="text-xl font-bold text-blue-800 mb-2">AI-Powered Quizzes</h3>
+        <p>Generate and practice grammar quizzes powered by AI based on your level.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+        <h3 class="text-xl font-bold text-blue-800 mb-2">Progress Tracking</h3>
+        <p>See your improvement over time and understand your strengths and weaknesses.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+        <h3 class="text-xl font-bold text-blue-800 mb-2">Lessons & Structure</h3>
+        <p>Learn with bite-sized lessons sorted by grammatical topic and sentence structure.</p>
+      </div>
+    </section>
+
+    <!-- Sign Up / Sign In Buttons -->
+    <section class="text-center mt-12 space-x-6" id="auth-buttons">
+      <a href="signup.html" class="inline-block bg-green-600 text-white px-8 py-4 text-xl rounded-lg shadow hover:bg-green-700 transition">
+        Sign Up
+      </a>
+      <a href="signin.html" class="inline-block bg-blue-700 text-white px-8 py-4 text-xl rounded-lg shadow hover:bg-blue-800 transition">
+        Already have an account?
+      </a>
+    </section>
+
+    <!-- Go to Profile -->
+    <section class="text-center mt-12 hidden" id="profile-button">
+      <a href="profile.html" class="inline-block bg-purple-600 text-white px-8 py-4 text-xl rounded-lg shadow hover:bg-purple-700 transition">
+        Go to My Profile
+      </a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white text-center py-4">
+    <p>&copy; 2025 Smart Learning System. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const token = localStorage.getItem("token");
+    if (token) {
+      document.getElementById("auth-buttons")?.classList.add("hidden");
+      document.getElementById("profile-button")?.classList.remove("hidden");
+      document.getElementById("nav-profile")?.classList.remove("hidden");
+    }
+  </script>
+  <button onclick="window.history.back()"class="fixed top-4 left-4 text-white text-2xl hover:text-yellow-300 font-bold py-2 px-4 z-50 ">
+    ⇦
+  </button>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz - Reflexive & Reciprocal Pronouns</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/attempts-client.js"></script>
+  <script>const QUIZ_STARTED_AT = Date.now();</script>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+  <header class="bg-blue-900 text-white py-6 shadow">
+    <div class="container mx-auto flex justify-between items-center px-6">
+      <h1 class="text-2xl font-bold">English Adjuster</h1>
+      <nav>
+        <a href="../index.html" class="mr-4 hover:text-yellow-300">Home</a>
+        <a href="../lessons/lessons.html" class="mr-4 hover:text-yellow-300">Lessons</a>
+        <a href="quiz.html" class="hover:text-yellow-300">Quizzes</a>
+        <a href="../profile.html" class="text-3xl text-yellow-300">👤</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-6 py-12 flex-grow">
+    <section class="text-center mb-8">
+      <h2 class="text-3xl font-bold text-blue-900 mb-4">Reflexive & Reciprocal Pronouns Quiz</h2>
+      <p class="text-lg text-gray-700">Choose the correct pronoun for each sentence.</p>
+    </section>
+
+    <form id="quizForm" class="space-y-8">
+      <!-- Questions Placeholder -->
+      <div id="quizQuestions" class="space-y-8"></div>
+
+      <div class="text-center">
+        <button type="button" onclick="submitQuiz()" class="bg-blue-700 text-white px-6 py-3 rounded hover:bg-blue-800 transition">Submit</button>
+      </div>
+    
+      <div class="text-center mt-8">
+        <button type="button" onclick="checkAnswers()" class="bg-blue-800 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">
+          Submit Answers
+        </button>
+      </div>
+</form>
+
+    <div id="result" class="text-center text-2xl font-bold mt-8 text-green-700"></div>
+  </main>
+
+  <footer class="bg-blue-900 text-white text-center py-4">
+    <p>&copy; 2025 Smart Learning System. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const questions = [
+      {
+        question: "She looked at _____ in the mirror.",
+        options: ["herself", "each other", "themselves", "myself"],
+        answer: "herself"
+      },
+      {
+        question: "I fixed the bike by _____.",
+        options: ["myself", "yourself", "herself", "ourselves"],
+        answer: "myself"
+      },
+      {
+        question: "They helped _____ with the project.",
+        options: ["each other", "himself", "yourself", "myself"],
+        answer: "each other"
+      },
+      {
+        question: "We taught _____ how to play chess.",
+        options: ["ourselves", "yourselves", "themselves", "one another"],
+        answer: "ourselves"
+      },
+      {
+        question: "You should be proud of _____.",
+        options: ["yourself", "ourselves", "himself", "herself"],
+        answer: "yourself"
+      },
+      {
+        question: "The children were talking to _____.",
+        options: ["each other", "herself", "himself", "yourself"],
+        answer: "each other"
+      },
+      {
+        question: "He blames _____ for the mistake.",
+        options: ["himself", "herself", "themselves", "ourselves"],
+        answer: "himself"
+      },
+      {
+        question: "In a good relationship, partners support _____.",
+        options: ["each other", "myself", "herself", "yourself"],
+        answer: "each other"
+      },
+      {
+        question: "The cat cleaned _____.",
+        options: ["itself", "himself", "yourself", "themselves"],
+        answer: "itself"
+      },
+      {
+        question: "We respect _____.",
+        options: ["one another", "yourself", "himself", "myself"],
+        answer: "one another"
+      },
+      {
+        question: "She often talks to _____.",
+        options: ["herself", "ourselves", "each other", "yourself"],
+        answer: "herself"
+      },
+      {
+        question: "The twins hugged _____.",
+        options: ["each other", "myself", "yourself", "himself"],
+        answer: "each other"
+      },
+      {
+        question: "I introduced _____ to the group.",
+        options: ["myself", "herself", "each other", "themselves"],
+        answer: "myself"
+      },
+      {
+        question: "They looked at _____ and smiled.",
+        options: ["each other", "myself", "herself", "yourselves"],
+        answer: "each other"
+      },
+      {
+        question: "The dog hurt _____.",
+        options: ["itself", "myself", "each other", "yourself"],
+        answer: "itself"
+      },
+      {
+        question: "You should believe in _____.",
+        options: ["yourself", "herself", "ourselves", "himself"],
+        answer: "yourself"
+      },
+      {
+        question: "The students congratulated _____.",
+        options: ["one another", "myself", "himself", "herself"],
+        answer: "one another"
+      },
+      {
+        question: "He prepared dinner by _____.",
+        options: ["himself", "herself", "ourselves", "yourself"],
+        answer: "himself"
+      },
+      {
+        question: "We challenged ____ to do better.",
+        options: ["ourselves", "himself", "each other", "yourself"],
+        answer: "ourselves"
+      },
+      {
+        question: "The friends called _____ every weekend.",
+        options: ["each other", "myself", "himself", "yourselves"],
+        answer: "each other"
+      }
+    ];
+
+    function loadQuestions() {
+      const container = document.getElementById("quizQuestions");
+      questions.forEach((q, index) => {
+        const optionsHTML = q.options.map(opt => `
+          <label class="block">
+            <input type="radio" name="q${index}" value="${opt}" class="mr-2" />
+            ${opt}
+          </label>
+        `).join("");
+        container.innerHTML += `
+          <div class="bg-white p-6 rounded shadow">
+            <p class="font-semibold mb-2">${index + 1}. ${q.question}</p>
+            ${optionsHTML}
+          </div>
+        `;
+      });
+    }
+
+    function submitQuiz() {
+      let score = 0;
+      questions.forEach((q, i) => {
+        const selected = document.querySelector('input[name="q' + i + '"]:checked');
+        if (selected && selected.value === q.answer) score++;
+      });
+      document.getElementById("result").innerText = `You got ${score} out of ${questions.length} correct.`;
+    }
+
+    window.onload = loadQuestions;
+  </script>
+  <button onclick="window.history.back()"class="fixed top-4 left-4 text-white text-2xl hover:text-yellow-300 font-bold py-2 px-4 z-50 ">
+    ⇦
+  </button>
+
+<script>
+  async function checkAnswers() {
+    const form = document.getElementById('quizForm') || document.querySelector('form');
+    const answers = form ? form.querySelectorAll('input[type="radio"]:checked') : [];
+    const total = (form ? form.querySelectorAll('.bg-white.p-6.rounded-lg.shadow').length : 0) || (form ? form.querySelectorAll('h3').length : 0) || answers.length || 20;
+    let score = 0;
+    answers.forEach(ans => { if (ans.value === "true") score++; });
+    const result = document.getElementById('result');
+    if (result) result.innerText = `You got ${score} out of ${total} correct.`;
+
+    try {
+      const items = window.__attemptsClient ? window.__attemptsClient.buildItemsFromForm(form) : [];
+      await (window.__attemptsClient ? window.__attemptsClient.saveAttempt({
+        topic: document.title || "Quiz - Reflexive & Reciprocal Pronouns",
+        quizType: "topic",
+        score,
+        total: items.length || total,
+        durationSec: Math.floor((Date.now() - (window.QUIZ_STARTED_AT || Date.now())) / 1000),
+        startedAt: new Date(window.QUIZ_STARTED_AT || Date.now()).toISOString(),
+        items
+      }) : Promise.resolve());
+      console.log("Attempt saved!");
+    } catch (e) {
+      console.error("Failed to save attempt:", e);
+    }
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
