@@ -1,16 +1,17 @@
 const form = document.getElementById("signin-form");
 const errorMsg = document.getElementById("error-msg");
+const BACKEND_URL = "https://english-adjuster-v1.onrender.com"; // ← my Render backend URL
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const email = form.email.value;
     const password = form.password.value;
 
-    try {
-    const res = await fetch("http://localhost:5500/api/signin", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password })
+	try {
+    const res = await fetch(`${BACKEND_URL}/api/signin`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
     });
 
     const data = await res.json();
