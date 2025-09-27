@@ -1,8 +1,8 @@
 {
   "name": "my-backend",
   "version": "1.0.0",
+  "type": "commonjs",  
   "main": "server.js",
-  "type": "module",
   "scripts": {
     "start": "node server.js"
   },	
