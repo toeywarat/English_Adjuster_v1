@@ -72,6 +72,8 @@
     const scoreList = document.getElementById("score-summary");
     const recommendList = document.getElementById("recommend-list");
 
+    const BACKEND_URL = "https://english-adjuster-v1.onrender.com";
+
     if (!token) {
       // ไม่ sign in: เปลี่ยนเนื้อหา dashboard ทั้งหมด
       document.querySelector("main").innerHTML = `
@@ -83,7 +85,7 @@
       `;
     } else {
       // ถ้ามี token: ลองดึงข้อมูลผู้ใช้
-      fetch("http://localhost:5500/api/profile", {
+      fetch(`${BACKEND_URL}/api/profile`, {
         method: "GET",
         headers: {
           Authorization: "Bearer " + token
@@ -109,7 +111,7 @@
           }
 
           // ดึงจุดอ่อนเพิ่มเติม
-          fetch("http://localhost:5500/api/analyze-pretest", {
+          fetch(`${BACKEND_URL}/api/analyze-pretest`, {
             headers: {
               Authorization: "Bearer " + token
             }
