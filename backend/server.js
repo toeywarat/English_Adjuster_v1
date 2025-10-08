@@ -29,10 +29,24 @@ mongoose
 
 // ✅ Middleware
 // app.use(cors());   Modify this original statement to allow frontend's domain (Github Page) to call it
+
+// app.use(cors({
+//   origin: ["https://toeywarat.github.io/English_Adjuster_v1", "http://localhost:5500"], // allow both local + production
+//   credentials: true
+}));
+
+// allow both local + production
 app.use(cors({
-  origin: ["https://toeywarat.github.io/English_Adjuster_v1", "http://localhost:5500"], // allow both local + production
+  origin: [
+    "https://toeywarat.github.io",
+    "https://toeywarat.github.io/",
+    "https://toeywarat.github.io/English_Adjuster_v1",
+    "https://toeywarat.github.io/English_Adjuster_v1/",
+    "http://localhost:5500"
+  ],
   credentials: true
 }));
+
 app.use(express.json());
 app.use(express.static("public"));
 

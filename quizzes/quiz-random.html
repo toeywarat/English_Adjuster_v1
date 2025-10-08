@@ -53,7 +53,9 @@
       box.innerHTML = "<p class='text-gray-600'>Loading quiz...</p>";
 
       try {
-        // const res = await fetch("http://localhost:5500/generate-quiz", {
+        
+		// const res = await fetch("http://localhost:5500/generate-quiz", {
+		
 		const res = await fetch(`${BACKEND_URL}/generate-quiz`, {		
           method: "POST",
           headers: { "Content-Type": "application/json" },
