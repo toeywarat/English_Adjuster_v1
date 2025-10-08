@@ -1,5 +1,13 @@
 require("dotenv").config({ path: __dirname + "/.env" });
 
+const allowedOrigins = [
+  "https://toeywarat.github.io",
+  "https://toeywarat.github.io/",
+  "https://toeywarat.github.io/English_Adjuster_v1",
+  "https://toeywarat.github.io/English_Adjuster_v1/",
+  "http://localhost:5500"
+];
+
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
@@ -36,16 +44,26 @@ mongoose
 // }));
 
 // allow both local + production
-app.use(cors({
-  origin: [
-    "https://toeywarat.github.io",
-    "https://toeywarat.github.io/",
-    "https://toeywarat.github.io/English_Adjuster_v1",
-    "https://toeywarat.github.io/English_Adjuster_v1/",
-    "http://localhost:5500"
-  ],
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps or curl)
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        console.log("❌ Blocked by CORS:", origin);
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+
+// Handle preflight explicitly (optional but safe)
+app.options("*", cors());
 
 app.use(express.json());
 app.use(express.static("public"));
