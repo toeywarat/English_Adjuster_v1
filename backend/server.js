@@ -33,7 +33,7 @@ mongoose
 // app.use(cors({
 //   origin: ["https://toeywarat.github.io/English_Adjuster_v1", "http://localhost:5500"], // allow both local + production
 //   credentials: true
-}));
+// }));
 
 // allow both local + production
 app.use(cors({
