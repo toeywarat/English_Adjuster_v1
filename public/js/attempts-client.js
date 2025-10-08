@@ -2,8 +2,13 @@
 // Generic helpers to save quiz attempts to the backend and to extract items from quiz pages
 // that mark the correct choice via value="true" on <input type="radio">.
 
-(function(){
-  const API_BASE = ""; // set to e.g. "http://localhost:5500" if frontend and backend are on different origins
+(function(){  
+  // const API_BASE = ""; // set to e.g. "http://localhost:5500" if frontend and backend are on different origins
+  
+const API_BASE =
+  window.location.hostname === "localhost"
+	? ""                                          // local development
+	: "https://english-adjuster-v1.onrender.com"; // Render backend
 
   async function saveAttempt(payload){
     try{

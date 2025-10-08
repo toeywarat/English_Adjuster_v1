@@ -15,7 +15,8 @@ const openai = new OpenAI({
 const fetch = (...args) => import("node-fetch").then(({ default: fetch }) => fetch(...args));
 
 const app = express();
-const port = 5500;
+// const port = 5500;
+const port = process.env.PORT || 5500; // use Render's port OR local 5500
 
 // ✅ เชื่อม MongoDB
 mongoose
@@ -27,7 +28,11 @@ mongoose
   .catch(err => console.error("❌ MongoDB connection error:", err));
 
 // ✅ Middleware
-app.use(cors());
+// app.use(cors());   Modify this original statement to allow frontend's domain (Github Page) to call it
+app.use(cors({
+  origin: ["https://toeywarat.github.io/English_Adjuster_v1", "http://localhost:5500"], // allow both local + production
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.static("public"));
 
@@ -197,5 +202,5 @@ Format:
 
 // ✅ Start server
 app.listen(port, () => {
-  console.log(`✅ Server running at http://localhost:${port}`);
+  console.log(`✅ Server running on port:${port}`);
 });

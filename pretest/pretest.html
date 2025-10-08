@@ -185,7 +185,23 @@
   </footer>
 
 <script>
-  document.getElementById("pretest-form").addEventListener("submit", function (e) {
+  // 1️⃣  Auto-detect backend URL
+  const BACKEND_URL =
+    window.location.hostname.includes("github.io")
+      ? "https://english-adjuster-v1.onrender.com" // Render backend
+      : "http://localhost:5500";                   // Local dev
+
+  // 2️⃣  Require login
+  const token = localStorage.getItem("token");
+  if (!token) {
+    alert("⚠️ Please sign in first.");
+    window.location.href = "../signin.html";
+  }
+
+  // 3️⃣ Handle submit
+  // document.getElementById("pretest-form").addEventListener("submit", async function (e) {
+       e.preventDefault();
+  document.getElementById("pretest-form").addEventListener("submit", async function (e) {
     e.preventDefault();
 
     const correctAnswers = {
@@ -195,10 +211,12 @@
     };
 
     let score = 0, answered = 0;
+	let answers = {};
     for (let key in correctAnswers) {
       const selected = document.querySelector(`input[name="${key}"]:checked`);
       if (selected) {
         answered++;
+		answers[key] = selected.value;
         if (selected.value.trim().toLowerCase() === correctAnswers[key]) score++;
       }
     }
@@ -208,8 +226,38 @@
       return;
     }
 
-    sessionStorage.setItem("grammarScore", score);
-    window.location.href = "pretest-vocab.html";
+    // 4️⃣ Save score to backend
+    try {
+      const res = await fetch(`${BACKEND_URL}/api/pretest`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token
+        },
+        body: JSON.stringify({ answers, totalScore: score })
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        // show result
+        document.getElementById("result").textContent =
+          `✅ ส่งผลทดสอบสำเร็จ! คุณได้ ${score} คะแนน`;
+
+        // Optionally move to next test page
+        setTimeout(() => {
+          window.location.href = "pretest-vocab.html";
+        }, 1500);
+      } else {
+        alert("❌ " + (data.message || "บันทึกผลไม่สำเร็จ"));
+      }
+    } catch (err) {
+      console.error(err);
+      alert("🚫 ไม่สามารถเชื่อมต่อเซิร์ฟเวอร์ได้");
+    }
+
+    // sessionStorage.setItem("grammarScore", score);
+    // window.location.href = "pretest-vocab.html";
   });
 </script>
 

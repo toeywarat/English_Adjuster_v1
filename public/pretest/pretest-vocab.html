@@ -143,7 +143,9 @@
   </footer>
 
 <script>
-  document.getElementById("vocab-form").addEventListener("submit", function (e) {
+  const BACKEND_URL = "https://english-adjuster-v1.onrender.com"; // ← my Render backend URL
+  
+  document.getElementById("vocab-form").addEventListener("submit", async function (e) {
     e.preventDefault();
 
     const correctAnswers = {
@@ -153,20 +155,52 @@
     };
 
     let score = 0, answered = 0;
+	let userAnswers = {};
     for (let key in correctAnswers) {
       const selected = document.querySelector(`input[name="${key}"]:checked`);
-      if (selected) {
-        answered++;
-        if (selected.value.trim().toLowerCase() === correctAnswers[key]) score++;
+	  
+    //  if (selected) {
+    //    answered++;
+    //    if (selected.value.trim().toLowerCase() === correctAnswers[key]) score++;
+    //  }
+    //}
+
+    //  if (answered < Object.keys(correctAnswers).length) {
+    //    alert("กรุณาตอบให้ครบทั้ง 15 ข้อก่อนส่งแบบทดสอบ");
+    //    return;
+    //}	  
+	  
+	  if (!selected) {
+	    alert("กรุณาตอบให้ครบทั้ง 15 ข้อก่อนส่งแบบทดสอบ");
+	    return;
       }
-    }
+      userAnswers[key] = selected.value;
+      if (selected.value.trim().toLowerCase() === correctAnswers[key]) score++;	  
 
-    if (answered < Object.keys(correctAnswers).length) {
-      alert("กรุณาตอบให้ครบทั้ง 15 ข้อก่อนส่งแบบทดสอบ");
-      return;
-    }
-
+    // Save locally 
     sessionStorage.setItem("vocabScore", score);
+	
+	// Send to backend
+	const token = localStorage.getItem("token"); // if using JWT
+	try {
+		const res = await fetch(`${BACKEND_URL}/api/pretest/vocab`, {
+		method: "POST",
+		headers: {
+		"Content-Type": "application/json",
+		"Authorization": token ? `Bearer ${token}` : ""
+		},
+		body: JSON.stringify({
+		score,
+		answers: userAnswers
+		})
+	});
+	const data = await res.json();
+	console.log("Backend response:", data);
+	} catch (err) {
+		console.error("Could not send score to backend:", err);
+	}	
+	
+	// Redirect to reading part	
     window.location.href = "pretest-reading.html";
   });
 </script>

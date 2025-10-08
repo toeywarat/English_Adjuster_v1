@@ -1,6 +1,12 @@
 const form = document.getElementById("signin-form");
 const errorMsg = document.getElementById("error-msg");
-const BACKEND_URL = "https://english-adjuster-v1.onrender.com"; // ← my Render backend URL
+// const BACKEND_URL = "https://english-adjuster-v1.onrender.com"; // ← my Render backend URL
+
+const BACKEND_URL =
+  window.location.hostname === "localhost"
+    ? "http://localhost:5500"                     // local development
+    : "https://english-adjuster-v1.onrender.com"; // Render backend
+
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();

@@ -1,4 +1,9 @@
-const API_BASE = ""; // e.g. "http://localhost:5500" if needed
+// const API_BASE = ""; // e.g. "http://localhost:5500" if needed
+const API_BASE =
+  window.location.hostname === "localhost"
+	? ""                                          // local development
+	: "https://english-adjuster-v1.onrender.com"; // Render backend
+
 const token = localStorage.getItem("token");
 if (!token) {
   // redirect to signin if unauthenticated
