@@ -42,12 +42,19 @@
     <pre id="quiz-output" style="white-space: pre-wrap; margin-top: 1rem;"></pre>
 
     <script>
+  // 1️⃣  Auto-detect backend URL
+  const BACKEND_URL =
+    window.location.hostname.includes("github.io")
+      ? "https://english-adjuster-v1.onrender.com" // Render backend
+      : "http://localhost:5500";                   // Local dev	
+	  
     async function generateQuiz() {
       const box = document.getElementById("question-box");
       box.innerHTML = "<p class='text-gray-600'>Loading quiz...</p>";
 
       try {
-        const res = await fetch("http://localhost:5500/generate-quiz", {
+        // const res = await fetch("http://localhost:5500/generate-quiz", {
+		const res = await fetch(`${BACKEND_URL}/generate-quiz`, {		
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
